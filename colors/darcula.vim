@@ -56,7 +56,9 @@ let s:codeWarning='#52503A'
 let s:errorStripe='#9E2927'
 let s:warnStripe='#BE9117'
 let s:infoStripe='#756D56'
+let s:typeDef='#B9BCD1'
 
+" helper function
 function s:Hi(group, fg, ...)
   " arguments: group, guifg, guibg, gui, guisp
   if a:0 >= 1
@@ -134,6 +136,7 @@ call s:Hi('WarningMsg', s:warning)
 call s:Hi('Comment', s:comment, s:bg, 'italic')
 hi! link Identifier Normal
 hi! link Type Keyword
+call s:Hi('Typedef', s:typeDef, s:bg)
 call s:Hi('Todo', s:todo, s:bg, 'italic,bold')
 hi! link Special PreProc
 call s:Hi('Constant', s:constant)
@@ -200,3 +203,10 @@ call s:Hi('ALEErrorSign', s:errorStripe, s:gutter)
 call s:Hi('ALEWarningSign', s:warnStripe, s:gutter)
 call s:Hi('ALEInfoSign', s:infoStripe, s:gutter)
 
+" vim
+hi! link vimOption Constant
+hi! link vimFunction Function
+hi! link vimContinue NonText
+hi! link vimParenSep Normal
+hi! link vimBracket PreProc
+hi! link vimOper Normal
