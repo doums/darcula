@@ -150,8 +150,8 @@ hi! link Tag Keyword
 call s:Hi('Debug', s:debug, 'NONE', 'italic')
 call s:Hi('Function', s:function)
 
-" Terminal colors
-let s:ANSIBlack='#BBBBBB'
+" Terminal colors (for :terminal)
+let s:ANSIBlack='#FFFFFF'
 let s:ANSIRed='#FF6B68'
 let s:ANSIGreen='#A8C023'
 let s:ANSIYellow='#D6BF55'
@@ -167,9 +167,10 @@ let s:ANSIBrightBlue='#7EAEF1'
 let s:ANSIBrightMagenta='#FF99FF'
 let s:ANSIBrightCyan='#6CDADA'
 let s:ANSIWhite='#1F1F1F'
-let g:terminal_ansi_colors= [
+let g:terminal_ansi_colors=[
       \ s:ANSIBlack,
       \ s:ANSIRed,
+      \ s:ANSIGreen,
       \ s:ANSIYellow,
       \ s:ANSIBlue,
       \ s:ANSIMagenta,
@@ -183,7 +184,7 @@ let g:terminal_ansi_colors= [
       \ s:ANSIBrightMagenta,
       \ s:ANSIBrightCyan,
       \ s:ANSIWhite
-]
+      \ ]
 
 " GitGutter
 call s:Hi('GitGutterAdd', s:addStripe, s:addStripe)
