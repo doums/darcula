@@ -57,6 +57,10 @@ let s:errorStripe='#9E2927'
 let s:warnStripe='#BE9117'
 let s:infoStripe='#756D56'
 let s:typeDef='#B9BCD1'
+let s:menu='#46484A'
+let s:menuFg='#AFB1B3'
+let s:menuSel='#103A5C'
+let s:menuSBar='#616263'
 
 " helper function
 function s:Hi(group, fg, ...)
@@ -87,7 +91,7 @@ hi! link Conceal Normal
 call s:Hi('Cursor', s:cursor)
 hi! link lCursor Cursor
 hi! link CursorIM Cursor
-" hi CursorColumn
+hi! link CursorColumn CursorLine
 call s:Hi('CursorLine', 'NONE', s:cursorLine, 'NONE')
 call s:Hi('DiffAdd', 'NONE', s:diffAdd)
 call s:Hi('DiffChange', 'NONE', s:diffChange)
@@ -104,13 +108,13 @@ call s:Hi('SignColumn', 'NONE', s:gutter)
 call s:Hi('LineNr', s:lineNumber, s:gutter)
 call s:Hi('CursorLineNr', s:cursorLineNr, s:cursorLine)
 call s:Hi('MatchParen', s:matchBraceFg, s:matchBraceBg, 'bold')
-" hi ModeMsg
+call s:Hi('ModeMsg', s:stdOutput)
 hi! link MoreMsg Normal
 call s:Hi('NonText', s:muted)
-" hi Pmenu
-" hi PmenuSel
-" hi PmenuSbar
-" hi PmenuThumb
+call s:Hi('Pmenu', s:menuFg, s:menu)
+call s:Hi('PmenuSel', s:menuFg, s:menuSel)
+call s:Hi('PmenuSbar', s:menu, s:menu)
+call s:Hi('PmenuThumb', s:menuSBar, s:menuSBar)
 hi! link Question Normal
 hi! link QuickFixLine Normal
 call s:Hi('Search', 'NONE', s:search)
@@ -132,7 +136,7 @@ hi! link Title Special
 call s:Hi('Visual', 'NONE', s:selection)
 hi! link VisualNOS Visual
 call s:Hi('WarningMsg', s:warning)
-" WildMenu
+hi! link WildMenu Normal
 call s:Hi('Comment', s:comment, s:bg, 'italic')
 hi! link Identifier Normal
 hi! link Type Keyword
