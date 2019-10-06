@@ -61,6 +61,8 @@ let s:menu='#46484A'
 let s:menuFg='#AFB1B3'
 let s:menuSel='#103A5C'
 let s:menuSBar='#616263'
+let s:xmlTag='#E8BF6A'
+let s:xmlEntity='#6D9CBE'
 
 " helper function
 function s:Hi(group, fg, ...)
@@ -214,3 +216,49 @@ hi! link vimContinue NonText
 hi! link vimParenSep Normal
 hi! link vimBracket PreProc
 hi! link vimOper Normal
+
+" JavaScript
+hi! link jsNoise Keyword
+hi! link JsImport Keyword
+hi! link JsFrom Keyword
+hi! link JsOperator Normal
+hi! link jsArrowFunction Normal
+hi! link jsFuncArgCommas Delimiter
+hi! link jsObjectKey Constant
+hi! link jsTernaryIfOperator Normal
+hi! link jsObjectSeparator Keyword
+hi! link jsSpreadOperator Normal
+hi! link jsModuleComma Keyword
+hi! link jsClassDefinition Normal
+hi! link jsSuper Keyword
+hi! link jsThis Keyword
+hi! link jsObjectProp Constant
+hi! link jsDestructuringNoise Keyword
+hi! link jsClassProperty Function
+hi! link jsBooleanTrue Keyword
+hi! link jsBooleanFalse Keyword
+hi! link jsObjectShorthandProp Normal
+hi! link jsObjectColon Normal
+hi! link jsExport Keyword
+hi! link jsModuleAs Keyword
+
+" XML
+call s:Hi('xmlTagName', s:xmlTag)
+hi! link xmlEndTag xmlTagName
+hi! link xmlAttrib Normal
+hi! link xmlProcessingDelim xmlTagName
+hi! link xmlDocTypeKeyword xmlTagName
+call s:Hi('xmlComment', s:comment)
+hi! link xmlCommentStart xmlComment
+hi! link xmlCommentPart xmlComment
+call s:Hi('xmlEntity', s:xmlEntity)
+hi! link xmlEntityPunct xmlEntity
+hi! link xmlCdata Normal
+hi! link xmlCdataCdata xmlCdata
+hi! link xmlCdataStart xmlCdata
+hi! link xmlCdataEnd xmlCdata
+hi! link xmlNamespace Constant
+hi! link xmlAttribPunct Normal
+
+" GraphQL
+hi! link graphqlTaggedTemplate Normal
