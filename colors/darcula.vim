@@ -38,7 +38,6 @@ let s:comment='#808080'
 let s:string='#6A8759'
 let s:number='#6897BB'
 let s:delimiter='#CC7832'
-let s:constant='#9876AA'
 let s:specialComment='#8A653B'
 let s:function='#FFC66D'
 let s:diffAdd='#294436'
@@ -136,7 +135,7 @@ hi! link Identifier Normal
 hi! link Type Keyword
 call s:Hi('Todo', s:todo, s:bg, 'italic,bold')
 hi! link Special PreProc
-call s:Hi('Constant', '#9876AA')
+call s:Hi('Constant', s:constant)
 call s:Hi('String', s:string)
 hi! link Character String
 call s:Hi('Number', s:number)
