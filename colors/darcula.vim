@@ -23,6 +23,7 @@ let s:errorMsg='#CC666E'
 let s:error='#BC3F3C'
 let s:warning=s:fg
 let s:muted='#72737A'
+let s:stdOutput='#BBBBBB'
 let s:lineNumber='#606366'
 let s:matchBraceFg='#FFEF28'
 let s:matchBraceBg='#3B514D'
@@ -124,7 +125,7 @@ hi! link SpellRare SpellBad
 " call s:Hi('TabLine', s:fg)
 " call s:Hi('TabLineFill', 'NONE')
 " call s:Hi('TabLineSel', s:fg, s:darkGrey)
-" Terminal
+call s:Hi('Terminal', s:stdOutput, s:bg)
 hi! link Title Special
 call s:Hi('Visual', 'NONE', s:selection)
 hi! link VisualNOS Visual
@@ -148,6 +149,41 @@ call s:Hi('PreProc', s:metaData)
 hi! link Tag Keyword
 call s:Hi('Debug', s:debug, 'NONE', 'italic')
 call s:Hi('Function', s:function)
+
+" Terminal colors
+let s:ANSIBlack='#BBBBBB'
+let s:ANSIRed='#FF6B68'
+let s:ANSIGreen='#A8C023'
+let s:ANSIYellow='#D6BF55'
+let s:ANSIBlue='#5394EC'
+let s:ANSIMagenta='#AE8ABE'
+let s:ANSICyan='#299999'
+let s:ANSIGray='#999999'
+let s:ANSIDarkGray='#555555'
+let s:ANSIBrightRed='#FF8785'
+let s:ANSIBrightGreen='#A8C023'
+let s:ANSIBrightYellow='#FFFF00'
+let s:ANSIBrightBlue='#7EAEF1'
+let s:ANSIBrightMagenta='#FF99FF'
+let s:ANSIBrightCyan='#6CDADA'
+let s:ANSIWhite='#1F1F1F'
+let g:terminal_ansi_colors= [
+      \ s:ANSIBlack,
+      \ s:ANSIRed,
+      \ s:ANSIYellow,
+      \ s:ANSIBlue,
+      \ s:ANSIMagenta,
+      \ s:ANSICyan,
+      \ s:ANSIGray,
+      \ s:ANSIDarkGray,
+      \ s:ANSIBrightRed,
+      \ s:ANSIBrightGreen,
+      \ s:ANSIBrightYellow,
+      \ s:ANSIBrightBlue,
+      \ s:ANSIBrightMagenta,
+      \ s:ANSIBrightCyan,
+      \ s:ANSIWhite
+]
 
 " GitGutter
 call s:Hi('GitGutterAdd', s:addStripe, s:addStripe)
