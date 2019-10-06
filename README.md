@@ -24,6 +24,11 @@ put this in your `.vimrc`
 colorscheme darcula
 ```
 
+if you use [lightline](https://github.com/itchyny/lightline.vim)
+```
+let g:lightline = { 'colorscheme': 'darcula' }
+```
+
 #### license
 Mozilla Public License 2.0
 
