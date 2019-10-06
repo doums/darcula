@@ -36,6 +36,7 @@ let s:foldedBg='#3A3A3A'
 let s:constant='#9876AA'
 let s:keyword='#CC7832'
 let s:comment='#808080'
+let s:docComment='#629755'
 let s:string='#6A8759'
 let s:number='#6897BB'
 let s:delimiter='#CC7832'
@@ -63,6 +64,7 @@ let s:menuSel='#103A5C'
 let s:menuSBar='#616263'
 let s:xmlTag='#E8BF6A'
 let s:xmlEntity='#6D9CBE'
+let s:yamlAnchor='#E8BF6A'
 
 " helper function
 function s:Hi(group, fg, ...)
@@ -216,6 +218,7 @@ hi! link vimContinue NonText
 hi! link vimParenSep Normal
 hi! link vimBracket PreProc
 hi! link vimOper Normal
+hi! link vimSep Normal
 
 " JavaScript
 hi! link jsNoise Keyword
@@ -242,6 +245,17 @@ hi! link jsObjectColon Normal
 hi! link jsExport Keyword
 hi! link jsModuleAs Keyword
 
+" JSON
+hi! link jsonBraces Normal
+hi! link jsonKeyword Constant
+call s:Hi('jsonCommentError', s:comment)
+hi! link jsonNoise Keyword
+hi! link jsonKeywordMatch Keyword
+hi! link jsonBoolean Keyword
+hi! link jsonNull Keyword
+hi! link jsonEscape Keyword
+hi! link jsonStringMatch String
+
 " XML
 call s:Hi('xmlTagName', s:xmlTag)
 hi! link xmlEndTag xmlTagName
@@ -262,3 +276,18 @@ hi! link xmlAttribPunct Normal
 
 " GraphQL
 hi! link graphqlTaggedTemplate Normal
+
+" YAML
+hi! link yamlDocumentStart Normal
+hi! link yamlDocumentEnd Normal
+call s:Hi('yamlComment', s:docComment, 'NONE', 'italic')
+hi! link yamlBlockMappingKey Keyword
+hi! link yamlKeyValueDelimiter Normal
+hi! link yamlInteger Normal
+hi! link yamlFloat Normal
+hi! link yamlBlockCollectionItemStart Normal
+call s:Hi('yamlAnchor', s:yamlAnchor)
+hi! link yamlAlias yamlAnchor
+hi! link yamlBool Normal
+hi! link yamlNodeTag Normal
+hi! link yamlNull Normal
