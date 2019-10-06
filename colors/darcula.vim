@@ -137,7 +137,7 @@ call s:Hi('Comment', s:comment, s:bg, 'italic')
 hi! link Identifier Normal
 hi! link Type Keyword
 call s:Hi('Typedef', s:typeDef, s:bg)
-call s:Hi('Todo', s:todo, s:bg, 'italic,bold')
+call s:Hi('Todo', s:todo, s:bg, 'italic')
 hi! link Special PreProc
 call s:Hi('Constant', s:constant)
 call s:Hi('String', s:string)
