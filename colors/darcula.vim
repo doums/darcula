@@ -23,6 +23,7 @@ let s:errorMsg='#CC666E'
 let s:error='#BC3F3C'
 let s:warning=s:fg
 let s:muted='#72737A'
+let s:link='#287BDE'
 let s:stdOutput='#BBBBBB'
 let s:lineNumber='#606366'
 let s:matchBraceFg='#FFEF28'
@@ -160,6 +161,7 @@ call s:Hi('PreProc', s:metaData)
 hi! link Tag Keyword
 call s:Hi('Debug', s:debug, 'NONE', 'italic')
 call s:Hi('Function', s:function)
+call s:Hi('noItalicComment', s:comment, s:bg)
 
 " Terminal colors (for :terminal)
 let s:ANSIBlack='#FFFFFF'
@@ -203,7 +205,7 @@ call s:Hi('GitGutterChange', s:changeStripe, s:changeStripe)
 call s:Hi('GitGutterDelete', s:deleteStripe, s:gutter)
 call s:Hi('GitGutterChangeDelete', s:stripeWhiteSpace, s:stripeWhiteSpace)
 
-" Ale
+" ALE
 call s:Hi('ALEInfo', 'NONE', 'NONE', 'underline')
 call s:Hi('ALEWarning', 'NONE', s:codeWarning)
 hi! link ALEError Error
@@ -248,7 +250,7 @@ hi! link jsModuleAs Keyword
 " JSON
 hi! link jsonBraces Normal
 hi! link jsonKeyword Constant
-call s:Hi('jsonCommentError', s:comment)
+hi! link jsonCommentError noItalicComment
 hi! link jsonNoise Keyword
 hi! link jsonKeywordMatch Keyword
 hi! link jsonBoolean Keyword
@@ -262,7 +264,7 @@ hi! link xmlEndTag xmlTagName
 hi! link xmlAttrib Normal
 hi! link xmlProcessingDelim xmlTagName
 hi! link xmlDocTypeKeyword xmlTagName
-call s:Hi('xmlComment', s:comment)
+hi! link xmlComment noItalicComment
 hi! link xmlCommentStart xmlComment
 hi! link xmlCommentPart xmlComment
 call s:Hi('xmlEntity', s:xmlEntity)
@@ -291,3 +293,32 @@ hi! link yamlAlias yamlAnchor
 hi! link yamlBool Normal
 hi! link yamlNodeTag Normal
 hi! link yamlNull Normal
+
+" Markdown
+call s:Hi('markdownH1', s:constant, 'NONE', 'italic')
+hi! link markdownH2 markdownH1
+hi! link markdownH3 markdownH1
+hi! link markdownH4 markdownH1
+hi! link markdownH5 markdownH1
+hi! link markdownH6 markdownH1
+hi! link markdownHeadingRule markdownH1
+hi! link markdownHeadingDelimiter markdownH1
+call s:Hi('markdownAutomaticLink', s:link, 'NONE', 'underline')
+hi! link markdownBlockquote String
+hi! link markdownBoldDelimiter Keyword
+hi! link markdownBold Normal
+hi! link markdownItalicDelimiter Keyword
+hi! link markdownItalic Normal
+hi! link markdownCode noItalicComment
+hi! link markdownCodeDelimiter markdownCode
+hi! link markdownCodeBlock markdownCode
+call s:Hi('markdownLinkText', s:link, 'NONE', 'underline')
+hi! link markdownLinkTextDelimiter markdownLinkText
+hi! link markdownUrlDelimiter markdownLinkText
+call s:Hi('markdownUrl', s:function, 'NONE', 'italic')
+hi! link markdownIdDelimiter Keyword
+hi! link markdownLinkDelimiter Keyword
+hi! link markdownIdDeclaration Keyword
+hi! link markdownLinkDelimiter Normal
+hi! link markdownUrlTitleDelimiter noItalicComment
+hi! link markdownRule noItalicComment
