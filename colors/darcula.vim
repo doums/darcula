@@ -63,9 +63,10 @@ let s:menu='#46484A'
 let s:menuFg='#AFB1B3'
 let s:menuSel='#103A5C'
 let s:menuSBar='#616263'
-let s:xmlTag='#E8BF6A'
-let s:xmlEntity='#6D9CBE'
-let s:yamlAnchor='#E8BF6A'
+let s:tag='#E8BF6A'
+let s:entity='#6D9CBE'
+let s:htmlAttribute='#BABABA'
+let s:htmlString='#A5C261'
 
 " helper function
 function s:Hi(group, fg, ...)
@@ -213,7 +214,7 @@ call s:Hi('ALEErrorSign', s:errorStripe, s:gutter)
 call s:Hi('ALEWarningSign', s:warnStripe, s:gutter)
 call s:Hi('ALEInfoSign', s:infoStripe, s:gutter)
 
-" vim
+" Vim
 hi! link vimOption Constant
 hi! link vimFunction Function
 hi! link vimContinue NonText
@@ -259,7 +260,7 @@ hi! link jsonEscape Keyword
 hi! link jsonStringMatch String
 
 " XML
-call s:Hi('xmlTagName', s:xmlTag)
+call s:Hi('xmlTagName', s:tag)
 hi! link xmlEndTag xmlTagName
 hi! link xmlAttrib Normal
 hi! link xmlProcessingDelim xmlTagName
@@ -267,7 +268,7 @@ hi! link xmlDocTypeKeyword xmlTagName
 hi! link xmlComment noItalicComment
 hi! link xmlCommentStart xmlComment
 hi! link xmlCommentPart xmlComment
-call s:Hi('xmlEntity', s:xmlEntity)
+call s:Hi('xmlEntity', s:entity)
 hi! link xmlEntityPunct xmlEntity
 hi! link xmlCdata Normal
 hi! link xmlCdataCdata xmlCdata
@@ -288,7 +289,7 @@ hi! link yamlKeyValueDelimiter Normal
 hi! link yamlInteger Normal
 hi! link yamlFloat Normal
 hi! link yamlBlockCollectionItemStart Normal
-call s:Hi('yamlAnchor', s:yamlAnchor)
+call s:Hi('yamlAnchor', s:tag)
 hi! link yamlAlias yamlAnchor
 hi! link yamlBool Normal
 hi! link yamlNodeTag Normal
@@ -322,3 +323,33 @@ hi! link markdownIdDeclaration Keyword
 hi! link markdownLinkDelimiter Normal
 hi! link markdownUrlTitleDelimiter noItalicComment
 hi! link markdownRule noItalicComment
+
+" HTML
+call s:Hi('htmlTag', s:tag)
+hi! link htmlTagName htmlTag
+hi! link htmlEndTag htmlTag
+call s:Hi('htmlArg', s:htmlAttribute)
+call s:Hi('htmlString', s:htmlString)
+hi! link htmlValue htmlString
+hi! link htmlComment noItalicComment
+hi! link htmlCommentError noItalicComment
+hi! link htmlCommentPart noItalicComment
+hi! link htmlBold Normal
+hi! link htmlBoldItalic Normal
+hi! link htmlBoldItalicUnderline Normal
+hi! link htmlBoldUnderline Normal
+hi! link htmlBoldUnderlineItalic Normal
+hi! link htmlItalic Normal
+hi! link htmlItalicBold Normal
+hi! link htmlItalicBoldUnderline Normal
+hi! link htmlItalicUnderline Normal
+hi! link htmlItalicUnderlineBold Normal
+hi! link htmlH1 Normal
+hi! link htmlH2 Normal
+hi! link htmlH3 Normal
+hi! link htmlH4 Normal
+hi! link htmlH5 Normal
+hi! link htmlH6 Normal
+hi! link htmlTitle Normal
+call s:Hi('htmlSpecialChar', s:entity)
+hi! link htmlSpecialTagName htmlTag
