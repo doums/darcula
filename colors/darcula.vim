@@ -67,6 +67,7 @@ let s:tag='#E8BF6A'
 let s:entity='#6D9CBE'
 let s:htmlAttribute='#BABABA'
 let s:htmlString='#A5C261'
+let s:tsObject='#507874'
 
 " helper function
 function s:Hi(group, fg, ...)
@@ -163,6 +164,9 @@ hi! link Tag Keyword
 call s:Hi('Debug', s:debug, 'NONE', 'italic')
 call s:Hi('Function', s:function)
 
+" helper groups
+call s:Hi('docComment', s:docComment, s:bg, 'italic')
+
 " Terminal colors (for :terminal)
 let s:ANSIBlack='#FFFFFF'
 let s:ANSIRed='#FF6B68'
@@ -250,6 +254,19 @@ hi! link jsObjectColon Normal
 hi! link jsExport Keyword
 hi! link jsModuleAs Keyword
 
+" TypeScript
+hi! link typescriptBraces Normal
+hi! link typescriptDocComment docComment
+hi! link typescriptDocParam docComment
+hi! link typescriptParens Normal
+hi! link typescriptOpSymbols Constant
+hi! link typescriptRegexpString Number
+hi! link typescriptSpecial Keyword
+hi! link typescriptLogicSymbols Constant
+hi! link typescriptExceptions Keyword
+call s:Hi('typescriptDocTags', s:docComment, s:bg, 'bold,italic,underline')
+call s:Hi('typescriptGlobalObjects', s:tsObject)
+
 " JSON
 hi! link jsonBraces Normal
 hi! link jsonKeyword Constant
@@ -286,7 +303,7 @@ hi! link graphqlTaggedTemplate Normal
 " YAML
 hi! link yamlDocumentStart Normal
 hi! link yamlDocumentEnd Normal
-call s:Hi('yamlComment', s:docComment, 'NONE', 'italic')
+hi! link yamlComment docComment
 hi! link yamlBlockMappingKey Keyword
 hi! link yamlKeyValueDelimiter Normal
 hi! link yamlInteger Normal
