@@ -1,12 +1,12 @@
 ## darcula
 
-A [vim](https://www.vim.org/) color scheme reproduction of the official JetBrains's Darcula theme
+A [Vim](https://www.vim.org/) color scheme reproduction of the official [JetBrains](https://www.jetbrains.com/) IDE Darcula theme
 
 #### install
 
 Follow the traditional way of your plugin manager
 
-For Example with [vim-plug](https://github.com/junegunn/vim-plug) add this in `.vimrc`
+For example with [vim-plug](https://github.com/junegunn/vim-plug) add this in `.vimrc`
 ```
 Plug 'doums/darcula'
 ```
