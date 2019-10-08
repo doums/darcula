@@ -1,6 +1,8 @@
 ## darcula
 
-A [Vim](https://www.vim.org/) color scheme reproduction of the official [JetBrains](https://www.jetbrains.com/) IDE Darcula theme
+![darcula](https://image.petitmur.beer/darcula.png)
+
+:smiling_imp: A [Vim](https://www.vim.org/) color scheme reproduction of the official [JetBrains](https://www.jetbrains.com/) IDE Darcula theme
 
 #### install
 
