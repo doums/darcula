@@ -204,7 +204,9 @@ call s:Hi('GitGutterAdd', s:addStripe, s:addStripe)
 call s:Hi('GitGutterChange', s:changeStripe, s:changeStripe)
 call s:Hi('GitGutterDelete', s:deleteStripe, s:gutter)
 call s:Hi('GitGutterChangeDelete', s:stripeWhiteSpace, s:stripeWhiteSpace)
-let g:gitgutter_sign_removed = '▶'
+if &encoding == 'utf-8'
+  let g:gitgutter_sign_removed = '▶'
+endif
 
 " ALE
 call s:Hi('ALEInfo', 'NONE', 'NONE', 'underline')
