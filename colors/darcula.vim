@@ -143,7 +143,7 @@ call s:Hi('Visual', 'NONE', s:selection)
 hi! link VisualNOS Visual
 call s:Hi('WarningMsg', s:warning)
 hi! link WildMenu Normal
-call s:Hi('Comment', s:comment, s:bg, 'italic')
+call s:Hi('Comment', s:comment)
 hi! link Identifier Normal
 hi! link Type Keyword
 call s:Hi('Typedef', s:typeDef, s:bg)
@@ -162,7 +162,6 @@ call s:Hi('PreProc', s:metaData)
 hi! link Tag Keyword
 call s:Hi('Debug', s:debug, 'NONE', 'italic')
 call s:Hi('Function', s:function)
-call s:Hi('noItalicComment', s:comment, s:bg)
 
 " Terminal colors (for :terminal)
 let s:ANSIBlack='#FFFFFF'
@@ -251,7 +250,7 @@ hi! link jsModuleAs Keyword
 " JSON
 hi! link jsonBraces Normal
 hi! link jsonKeyword Constant
-hi! link jsonCommentError noItalicComment
+hi! link jsonCommentError Comment
 hi! link jsonNoise Keyword
 hi! link jsonKeywordMatch Keyword
 hi! link jsonBoolean Keyword
@@ -265,7 +264,7 @@ hi! link xmlEndTag xmlTagName
 hi! link xmlAttrib Normal
 hi! link xmlProcessingDelim xmlTagName
 hi! link xmlDocTypeKeyword xmlTagName
-hi! link xmlComment noItalicComment
+hi! link xmlComment Comment
 hi! link xmlCommentStart xmlComment
 hi! link xmlCommentPart xmlComment
 call s:Hi('xmlEntity', s:entity)
@@ -311,7 +310,7 @@ hi! link markdownBoldDelimiter Keyword
 hi! link markdownBold Normal
 hi! link markdownItalicDelimiter Keyword
 hi! link markdownItalic Normal
-hi! link markdownCode noItalicComment
+hi! link markdownCode Comment
 hi! link markdownCodeDelimiter markdownCode
 hi! link markdownCodeBlock markdownCode
 call s:Hi('markdownLinkText', s:link, 'NONE', 'underline')
@@ -322,8 +321,8 @@ hi! link markdownIdDelimiter Keyword
 hi! link markdownLinkDelimiter Keyword
 hi! link markdownIdDeclaration Keyword
 hi! link markdownLinkDelimiter Normal
-hi! link markdownUrlTitleDelimiter noItalicComment
-hi! link markdownRule noItalicComment
+hi! link markdownUrlTitleDelimiter Comment
+hi! link markdownRule Comment
 
 " HTML
 call s:Hi('htmlTag', s:tag)
@@ -332,9 +331,9 @@ hi! link htmlEndTag htmlTag
 call s:Hi('htmlArg', s:htmlAttribute)
 call s:Hi('htmlString', s:htmlString)
 hi! link htmlValue htmlString
-hi! link htmlComment noItalicComment
-hi! link htmlCommentError noItalicComment
-hi! link htmlCommentPart noItalicComment
+hi! link htmlComment Comment
+hi! link htmlCommentError Comment
+hi! link htmlCommentPart Comment
 hi! link htmlBold Normal
 hi! link htmlBoldItalic Normal
 hi! link htmlBoldItalicUnderline Normal
@@ -354,3 +353,25 @@ hi! link htmlH6 Normal
 hi! link htmlTitle Normal
 call s:Hi('htmlSpecialChar', s:entity)
 hi! link htmlSpecialTagName htmlTag
+
+" CSS
+hi! link cssAtKeyword Keyword
+hi! link cssBraces Normal
+hi! link cssAttributeSelector htmlTag
+hi! link cssSelectorOp Normal
+hi! link cssClassName htmlTag
+hi! link cssNoise Keyword
+hi! link cssAttrComma Keyword
+hi! link cssFunctionComma Keyword
+hi! link cssMediaComma Keyword
+hi! link cssComment Comment
+hi! link cssClassNameDot Normal
+call s:Hi('cssFunctionName', s:tag)
+call s:Hi('cssColor', s:number)
+call s:Hi('cssIdentifier', s:tag)
+call s:Hi('cssPseudoClassId', s:tag)
+call s:Hi('cssImportant', s:keyword, s:bg, 'bold')
+call s:Hi('cssProp', s:htmlAttribute)
+call s:Hi('cssAttr', s:htmlString)
+call s:Hi('cssAttrRegion', s:htmlString)
+call s:Hi('cssURL', s:link)
