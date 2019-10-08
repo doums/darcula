@@ -276,6 +276,7 @@ hi! link xmlCdataStart xmlCdata
 hi! link xmlCdataEnd xmlCdata
 hi! link xmlNamespace Constant
 hi! link xmlAttribPunct Normal
+hi! link xmlEqual xmlString
 
 " GraphQL
 hi! link graphqlTaggedTemplate Normal
