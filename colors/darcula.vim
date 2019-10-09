@@ -72,6 +72,8 @@ let s:statusLine='#3C3F41'
 let s:statusLineFg='#AEB0B2'
 let s:statusLineNC='#88898B'
 let s:tabLineSel='#4E5254'
+let s:keywordTwo='#C57633'
+let s:templateLanguage='#232525'
 
 " helper function
 function s:Hi(group, fg, ...)
@@ -399,3 +401,27 @@ call s:Hi('cssProp', s:htmlAttribute)
 call s:Hi('cssAttr', s:htmlString)
 call s:Hi('cssAttrRegion', s:htmlString)
 call s:Hi('cssURL', s:link)
+
+" Shell Script
+hi! link shRange Normal
+hi! link shFunctionKey Keyword
+call s:Hi('shStatement', s:keywordTwo)
+hi! link bashStatement shStatement
+hi! link shDerefVar Normal
+hi! link shQuote String
+call s:Hi('shHereDoc', 'NONE', s:templateLanguage)
+call s:Hi('shRedir', s:fg, s:bg, 'bold')
+hi! link shDerefSimple Normal
+hi! link shCommandSubBQ Constant
+hi! link shOption Normal
+hi! link shCmdSubRegion shStatement
+hi! link shCommandSub Normal
+hi! link shLoop Keyword
+hi! link shCommandSub Keyword
+hi! link shSet shStatement
+hi! link shFunctionTwo shStatement
+hi! link shCtrlSeq String
+hi! link shSpecial String
+hi! link shCommandSub Normal
+hi! link shDerefSpecial Normal
+hi! link shOperator Normal
