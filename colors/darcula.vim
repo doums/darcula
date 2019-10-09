@@ -68,6 +68,10 @@ let s:entity='#6D9CBE'
 let s:htmlAttribute='#BABABA'
 let s:htmlString='#A5C261'
 let s:tsObject='#507874'
+let s:statusLine='#3C3F41'
+let s:statusLineFg='#AEB0B2'
+let s:statusLineNC='#88898B'
+let s:tabLineSel='#4E5254'
 
 " helper function
 function s:Hi(group, fg, ...)
@@ -131,13 +135,13 @@ call s:Hi('SpellBad', s:typo, 'NONE', 'underline')
 hi! link SpellCap SpellBad
 hi! link SpellLocal SpellBad
 hi! link SpellRare SpellBad
-" StatusLine
-" StatusLineNC
-" StatusLineTerm
-" StatusLineTermNC
-" call s:Hi('TabLine', s:fg)
-" call s:Hi('TabLineFill', 'NONE')
-" call s:Hi('TabLineSel', s:fg, s:darkGrey)
+call s:Hi('StatusLine', s:statusLineFg, s:statusLine)
+call s:Hi('StatusLineNC', s:statusLineNC, s:statusLine)
+hi! link StatusLineTerm StatusLine
+hi! link StatusLineTermNC StatusLineNC
+call s:Hi('TabLine', s:statusLineFg, s:statusLine)
+call s:Hi('TabLineFill', s:statusLine, s:statusLine)
+call s:Hi('TabLineSel', s:fg, s:tabLineSel)
 call s:Hi('Terminal', s:stdOutput, s:bg)
 hi! link Title Special
 call s:Hi('Visual', 'NONE', s:selection)
