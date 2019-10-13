@@ -93,8 +93,8 @@ function s:Hi(group, fg, ...)
         \ 'guifg=' . a:fg,
         \ 'guibg=' . bg,
         \ 'gui=' . style,
-        \ 'ctermfg=' . darcula#convert#Hex2X256(a:fg),
-        \ 'ctermbg=' . darcula#convert#Hex2X256(bg),
+        "\ 'ctermfg=' . darcula#convert#Hex2X256(a:fg), FIXME
+        "\ 'ctermbg=' . darcula#convert#Hex2X256(bg), FIXME
         \ 'cterm=' . style,
         \ 'term=' . style
         \ ]
