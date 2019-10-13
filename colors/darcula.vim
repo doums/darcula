@@ -93,7 +93,10 @@ function s:Hi(group, fg, ...)
         \ 'guifg=' . a:fg,
         \ 'guibg=' . bg,
         \ 'gui=' . style,
-        \ 'cterm=' . style
+        \ 'ctermfg=' . darcula#convert#Hex2X256(a:fg),
+        \ 'ctermbg=' . darcula#convert#Hex2X256(bg),
+        \ 'cterm=' . style,
+        \ 'term=' . style
         \ ]
   execute join(hiList)
 endfunction
