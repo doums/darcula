@@ -351,6 +351,7 @@ hi! link markdownUrlTitleDelimiter Comment
 hi! link markdownRule Comment
 
 " HTML
+let html_no_rendering=1
 call s:Hi('htmlTag', s:tag)
 hi! link htmlTagName htmlTag
 hi! link htmlEndTag htmlTag
@@ -360,23 +361,6 @@ hi! link htmlValue htmlString
 hi! link htmlComment Comment
 hi! link htmlCommentError Comment
 hi! link htmlCommentPart Comment
-hi! link htmlBold Normal
-hi! link htmlBoldItalic Normal
-hi! link htmlBoldItalicUnderline Normal
-hi! link htmlBoldUnderline Normal
-hi! link htmlBoldUnderlineItalic Normal
-hi! link htmlItalic Normal
-hi! link htmlItalicBold Normal
-hi! link htmlItalicBoldUnderline Normal
-hi! link htmlItalicUnderline Normal
-hi! link htmlItalicUnderlineBold Normal
-hi! link htmlH1 Normal
-hi! link htmlH2 Normal
-hi! link htmlH3 Normal
-hi! link htmlH4 Normal
-hi! link htmlH5 Normal
-hi! link htmlH6 Normal
-hi! link htmlTitle Normal
 call s:Hi('htmlSpecialChar', s:entity)
 hi! link htmlSpecialTagName htmlTag
 
@@ -403,6 +387,7 @@ call s:Hi('cssAttrRegion', s:htmlString)
 call s:Hi('cssURL', s:link)
 
 " Shell Script
+call s:Hi('sheBang', s:fg, s:bg, 'bold')
 hi! link shRange Normal
 hi! link shFunctionKey Keyword
 call s:Hi('shStatement', s:keywordTwo)
@@ -425,3 +410,6 @@ hi! link shSpecial String
 hi! link shCommandSub Normal
 hi! link shDerefSpecial Normal
 hi! link shOperator Normal
+
+" help
+hi! link helpHyperTextJump Number
