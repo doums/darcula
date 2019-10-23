@@ -57,6 +57,7 @@ let s:changeStripe='#374752'
 let s:deleteStripe='#656E76'
 let s:typo='#659C6B'
 let s:metaData='#BBB529'
+let s:macroName='#908B25'
 let s:debug='#666D75'
 let s:codeWarning='#52503A'
 let s:errorStripe='#9E2927'
@@ -230,6 +231,11 @@ call s:Hi('ALEErrorSign', s:errorStripe, s:gutter)
 call s:Hi('ALEWarningSign', s:warnStripe, s:gutter)
 call s:Hi('ALEInfoSign', s:infoStripe, s:gutter)
 
+" C/C++
+call s:Hi('cMacroName', s:macroName)
+hi! link cPreProcRegion Normal
+hi! link cUserLabel Normal
+
 " Vim
 hi! link vimOption Constant
 hi! link vimFunction Function
@@ -238,6 +244,7 @@ hi! link vimParenSep Normal
 hi! link vimBracket PreProc
 hi! link vimOper Normal
 hi! link vimSep Normal
+hi! link vimCommentString Comment
 
 " JavaScript
 hi! link jsNoise Keyword
