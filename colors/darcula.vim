@@ -245,6 +245,11 @@ hi! link cSemicolon Keyword
 hi! link cComma Keyword
 call s:Hi('cppAfterColon', s:cStructField)
 hi! link cppBeforeColon cDataStructure
+call s:Hi('cStructField', s:cStructField)
+hi! link cppNullptr Keyword
+hi! link cppTemplate Keyword
+hi! link cTypedef Keyword
+hi! link cppTypeName Keyword
 
 " Vim
 hi! link vimOption Constant
