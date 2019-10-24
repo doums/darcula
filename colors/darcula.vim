@@ -304,7 +304,6 @@ call s:Hi('typescriptGlobalObjects', s:tsObject)
 " JSON
 hi! link jsonBraces Normal
 hi! link jsonKeyword Constant
-hi! link jsonCommentError Comment
 hi! link jsonNoise Keyword
 hi! link jsonKeywordMatch Keyword
 hi! link jsonBoolean Keyword
