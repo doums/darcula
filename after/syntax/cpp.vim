@@ -1,0 +1,2 @@
+syn clear cppStructure
+

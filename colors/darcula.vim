@@ -58,6 +58,8 @@ let s:deleteStripe='#656E76'
 let s:typo='#659C6B'
 let s:metaData='#BBB529'
 let s:macroName='#908B25'
+let s:cDataStructure='#B5B6E3'
+let s:cStructField='#9373A5'
 let s:debug='#666D75'
 let s:codeWarning='#52503A'
 let s:errorStripe='#9E2927'
@@ -235,6 +237,14 @@ call s:Hi('ALEInfoSign', s:infoStripe, s:gutter)
 call s:Hi('cMacroName', s:macroName)
 hi! link cPreProcRegion Normal
 hi! link cUserLabel Normal
+hi! link cDataStructureKeyword Keyword
+call s:Hi('cDataStructure', s:cDataStructure)
+call s:Hi('cFunction', s:function)
+hi! link cppDestructor cFunction
+hi! link cSemicolon Keyword
+hi! link cComma Keyword
+call s:Hi('cppAfterColon', s:cStructField)
+hi! link cppBeforeColon cDataStructure
 
 " Vim
 hi! link vimOption Constant
