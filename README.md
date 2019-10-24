@@ -30,6 +30,7 @@ if you use [lightline](https://github.com/itchyny/lightline.vim)
 ```
 let g:lightline = { 'colorscheme': 'darcula' }
 ```
+NOTE: lightline already provides a "darcula" color scheme that I find simply bad. Unfortunately, by default this one is used. If you want to use mine instead and I strongly recommend it, just go inside `your_package_manager_path/lightline.vim/autoload/lightline/colorscheme` directory and remove `darcula.vim`.
 
 #### license
 Mozilla Public License 2.0
