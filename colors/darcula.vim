@@ -250,6 +250,8 @@ hi! link cppNullptr Keyword
 hi! link cppTemplate Keyword
 hi! link cTypedef Keyword
 hi! link cppTypeName Keyword
+hi! link cSpecial Keyword
+call s:Hi('cSomeMacro', s:macroName)
 
 " Vim
 hi! link vimOption Constant

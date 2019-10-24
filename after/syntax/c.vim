@@ -5,8 +5,9 @@ syn match cMacroName "\(^\s\{-}#\s\{-}\<\(ifdef\|ifndef\|define\|undef\)\>\)\@<=
 syn clear cStructure
 syn match cDataStructure "\<\(typedef\_s\{-}struct\|struct\|class\|enum\_s\{-}class\|enum\|union\|namespace\)\>\_s\{-}\zs\<\I\i*\>" contained
 syn match cDataStructureKeyword contains=cDataStructure "^\s\{-}\<\(typedef\_s\{-}struct\|struct\|class\|enum\_s\{-}class\|enum\|union\|namespace\)\>\_s\{-}\<\I\i*\>"
-syn match cFunction "\(\(\.\|->\|[(){};=!]\|\<new\>.*\)\_s\{-}\)\@<!\<\I\i*\>\ze\_s\{-}("
+syn match cFunction "\(\(\.\|->\|[(){};=!]\|\<new\>.*\|&&\)\_s\{-}\)\@<!\<\I\i*\>\ze\_s\{-}("
 syn match cSemicolon ";"
 syn match cComma ","
 syn match cStructField "\.\zs\_s\{-}\<\I\i*\>"
 syn keyword cTypedef typedef
+syn keyword cSomeMacro NULL FALSE TRUE
