@@ -1,3 +1,7 @@
+" This Source Code Form is subject to the terms of the Mozilla Public
+" License, v. 2.0. If a copy of the MPL was not distributed with this
+" file, You can obtain one at https://mozilla.org/MPL/2.0/.
+
 syn clear cPreCondit cPreProc cDefine
 syn keyword cPreProc define undef error if elif else endif include import using ifdef ifndef line pragma contained
 syn region cPreProcRegion oneline contains=ALL matchgroup=PreProc keepend start="^\s\{-}#\s\{-}" end="$"
