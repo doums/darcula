@@ -79,7 +79,7 @@ let s:statusLine='#3C3F41'
 let s:statusLineFg='#AEB0B2'
 let s:statusLineNC='#88898B'
 let s:tabLineSel='#4E5254'
-let s:keywordTwo='#C57633'
+let s:shCommand='#C57633'
 let s:templateLanguage='#232525'
 let s:rustMacro='#4EADE5'
 let s:rustLifetime='#20999D'
@@ -257,13 +257,12 @@ call s:Hi('cSomeMacro', s:macroName)
 
 " Rust
 call s:Hi('rustDeriveTrait', s:metaData)
-hi! link rustQuestionMark Special
-call s:Hi('rustQuestionMark', s:specialComment, s:bg, 'bold')
+hi! link rustQuestionMark PreProc
 hi! link rustComma Keyword
 hi! link rustSemicolon Keyword
 hi! link rustOperator Normal
 call s:Hi('rustCommentLineDoc', s:docComment, s:bg, 'italic')
-call s:Hi('rustMacro', s:macroName)
+hi! link rustMacro PreProc
 hi! link rustEscape Keyword
 hi! link rustSigil Normal
 hi! link rustSelf Keyword
@@ -441,7 +440,7 @@ call s:Hi('cssURL', s:link)
 call s:Hi('sheBang', s:fg, s:bg, 'bold')
 hi! link shRange Normal
 hi! link shFunctionKey Keyword
-call s:Hi('shStatement', s:keywordTwo)
+call s:Hi('shStatement', s:shCommand)
 hi! link bashStatement shStatement
 hi! link shDerefVar Normal
 hi! link shQuote String
