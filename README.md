@@ -28,9 +28,15 @@ colorscheme darcula
 
 if you use [lightline](https://github.com/itchyny/lightline.vim)
 ```
-let g:lightline = { 'colorscheme': 'darcula' }
+let g:lightline = { 'colorscheme': 'darculaOriginal' }
 ```
-NOTE: lightline already provides a "darcula" color scheme that I find simply bad. Unfortunately, by default this one is used. If you want to use mine instead and I strongly recommend it, just go inside `your_package_manager_path/lightline.vim/autoload/lightline/colorscheme` directory and remove `darcula.vim`.
+NOTE: lightline already provides a "darcula" color scheme that I find simply bad. I strongly recommend to use mine instead (using `darculaOriginal` instead of `darcula` in the above config).
+
+#### todo
+256color palette support
+
+#### credits
+[JetBrains](https://www.jetbrains.com/) for the original and awsome Darcula color scheme!
 
 #### license
 Mozilla Public License 2.0
