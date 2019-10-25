@@ -81,6 +81,8 @@ let s:statusLineNC='#88898B'
 let s:tabLineSel='#4E5254'
 let s:keywordTwo='#C57633'
 let s:templateLanguage='#232525'
+let s:rustMacro='#4EADE5'
+let s:rustLifetime='#20999D'
 
 " helper function
 function s:Hi(group, fg, ...)
@@ -252,6 +254,28 @@ hi! link cTypedef Keyword
 hi! link cppTypeName Keyword
 hi! link cSpecial Keyword
 call s:Hi('cSomeMacro', s:macroName)
+
+" Rust
+call s:Hi('rustDeriveTrait', s:metaData)
+hi! link rustQuestionMark Special
+call s:Hi('rustQuestionMark', s:specialComment, s:bg, 'bold')
+hi! link rustComma Keyword
+hi! link rustSemicolon Keyword
+hi! link rustOperator Normal
+call s:Hi('rustCommentLineDoc', s:docComment, s:bg, 'italic')
+call s:Hi('rustMacro', s:macroName)
+hi! link rustEscape Keyword
+hi! link rustSigil Normal
+hi! link rustSelf Keyword
+call s:Hi('rustLifetime', s:macroName, s:bg, 'italic')
+call s:Hi('rustTypeParameter', s:macroName, s:bg, 'bold')
+call s:Hi('rustEnumVariant', s:constant, s:bg, 'italic')
+hi! link rustModPath Normal
+hi! link rustModPathSep Normal
+hi! link rustAs Keyword
+hi! link rustConst Keyword
+call s:Hi('rustConst', s:constant, s:bg, 'italic')
+hi! link rustVarField Constant
 
 " Vim
 hi! link vimOption Constant
