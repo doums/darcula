@@ -237,6 +237,8 @@ call s:Hi('ALEInfoSign', s:infoStripe, s:gutter)
 
 " C/C++
 call s:Hi('cMacroName', s:macroName)
+hi! link cConstant cMacroName
+hi! link cPreInclude String
 hi! link cPreProcRegion Normal
 hi! link cUserLabel Normal
 hi! link cDataStructureKeyword Keyword
@@ -253,6 +255,7 @@ hi! link cppTemplate Keyword
 hi! link cTypedef Keyword
 hi! link cppTypeName Keyword
 hi! link cSpecial Keyword
+hi! link cEnum Keyword
 call s:Hi('cSomeMacro', s:macroName)
 
 " Rust
