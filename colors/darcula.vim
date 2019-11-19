@@ -260,17 +260,19 @@ call s:Hi('cSomeMacro', s:macroName)
 
 " Rust
 call s:Hi('rustDeriveTrait', s:metaData)
-hi! link rustQuestionMark PreProc
+hi! link rustQuestionMark Keyword
 hi! link rustComma Keyword
 hi! link rustSemicolon Keyword
 hi! link rustOperator Normal
 call s:Hi('rustCommentLineDoc', s:docComment, s:bg, 'italic')
-hi! link rustMacro PreProc
+call s:Hi('rustMacro', s:rustMacro)
+hi! link rustAssert rustMacro
+hi! link rustPanic rustMacro
 hi! link rustEscape Keyword
 hi! link rustSigil Normal
 hi! link rustSelf Keyword
-call s:Hi('rustLifetime', s:macroName, s:bg, 'italic')
-call s:Hi('rustTypeParameter', s:macroName, s:bg, 'bold')
+call s:Hi('rustLifetime', s:rustLifetime, s:bg, 'italic')
+call s:Hi('rustTypeParameter', s:rustLifetime, s:bg)
 call s:Hi('rustEnumVariant', s:constant, s:bg, 'italic')
 hi! link rustModPath Normal
 hi! link rustModPathSep Normal
