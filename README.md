@@ -30,8 +30,8 @@ let g:lightline = { 'colorscheme': 'darculaOriginal' }
 ```
 NOTE: lightline already provides a "darcula" color scheme that I find simply bad. I strongly recommend to use mine instead (using `darculaOriginal` instead of `darcula` in the above config).
 
-#### need to change some highlight groups?
-the color palette is exposed through the dictionary `darcula#palette`
+#### need to access the color palette?
+the palette is exposed through the dictionary `darcula#palette`
 ```
 echo darcula#palette.comment
 ```
