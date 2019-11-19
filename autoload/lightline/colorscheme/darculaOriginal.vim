@@ -2,11 +2,11 @@
 " License, v. 2.0. If a copy of the MPL was not distributed with this
 " file, You can obtain one at https://mozilla.org/MPL/2.0/.
 
-let s:bg=['#3C3F41', 0]
-let s:fg=['#AEB0B2',0]
-let s:muted=['#88898b', 0]
-let s:middle=['#313335', 0]
-let s:onMiddle=['#BBBBBB', 0]
+let s:bg=[darcula#palette.statusLine, 0]
+let s:fg=[darcula#palette.statusLineFg,0]
+let s:muted=[darcula#palette.statusLineNC, 0]
+let s:middle=[darcula#palette.gutter, 0]
+let s:onMiddle=[darcula#palette.cursor, 0]
 let s:mutedMiddle=s:middle
 let s:onMutedMid=s:muted
 let s:secondary=s:bg
@@ -20,12 +20,12 @@ let s:onMutedRight=s:muted
 let s:normal=s:bg
 let s:onNormal=s:fg
 let s:visual=s:bg
-let s:onVisual=['#3591C3', 0]
+let s:onVisual=[darcula#palette.UIBlue, 0]
 let s:insert=s:bg
-let s:onInsert=['#499B54', 0]
+let s:onInsert=[darcula#palette.UIGreen, 0]
 let s:replace=s:bg
-let s:onReplace=['#C65450', 0]
-let s:tabSel=['#4E5254', 0]
+let s:onReplace=[darcula#palette.UIRed, 0]
+let s:tabSel=[darcula#palette.tabLineSel, 0]
 " let s:error=['#', 0]
 " let s:warning=['#', 0]
 

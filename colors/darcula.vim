@@ -97,7 +97,10 @@ let s:p=#{
       \ ANSIBrightBlue: '#7EAEF1',
       \ ANSIBrightMagenta: '#FF99FF',
       \ ANSIBrightCyan: '#6CDADA',
-      \ ANSIWhite: '#1F1F1F'
+      \ ANSIWhite: '#1F1F1F',
+      \ UIBlue: '#3591C3',
+      \ UIGreen: '#499B54',
+      \ UIRed: '#C65450',
       \ }
 
 " expose the palette
