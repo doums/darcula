@@ -37,6 +37,8 @@ echo darcula#palette.comment
 ```
 also if you really want to change some highlight groups you can use `darcula#Hi()` function
 ```
+" arguments: group, foreground, background, style
+" you can omit the last two arguments
 call darcula#Hi('rustLifetime', darcula#palette.macroName, darcula#palette.bg, 'italic')
 ```
 
