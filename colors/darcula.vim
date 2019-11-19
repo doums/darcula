@@ -99,6 +99,8 @@ let s:p=#{
       \ ANSIBrightCyan: '#6CDADA',
       \ ANSIWhite: '#1F1F1F'
       \ }
+
+" expose the palette
 let darcula#palette=s:p
 
 " helper function
@@ -122,6 +124,17 @@ function s:Hi(group, fg, ...)
         \ 'cterm=' . style
         \ ]
   execute join(hiList)
+endfunction
+
+" expose that function
+function darcula#Hi(group, fg, ...)
+  if a:0 >= 2
+    call s:Hi(a:group, a:fg, a:1, a:2)
+  elseif a:0 == 1
+    call s:Hi(a:group, a:fg, a:1)
+  else
+    call s:Hi(a:group, a:fg)
+  endif
 endfunction
 
 call s:Hi('Normal', s:p.fg, s:p.bg)

@@ -35,6 +35,10 @@ the palette is exposed through the dictionary `darcula#palette`
 ```
 echo darcula#palette.comment
 ```
+also if you really want to change some highlight groups you can use `darcula#Hi()` function
+```
+call darcula#Hi('rustLifetime', darcula#palette.macroName, darcula#palette.bg, 'italic')
+```
 
 #### todo
 256color palette support
