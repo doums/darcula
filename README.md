@@ -30,7 +30,7 @@ let g:lightline = { 'colorscheme': 'darculaOriginal' }
 ```
 NOTE: lightline already provides a "darcula" color scheme that I find simply bad. I strongly recommend to use mine instead (using `darculaOriginal` instead of `darcula` in the above config).
 
-#### need to access the color palette?
+#### API
 the palette is exposed through the dictionary `darcula#palette`
 ```
 echo darcula#palette.comment
@@ -42,8 +42,9 @@ also if you really want to change some highlight groups you can use `darcula#Hi(
 call darcula#Hi('rustLifetime', darcula#palette.macroName, darcula#palette.bg, 'italic')
 ```
 
-#### todo
-256color palette support
+#### color support
+- Truecolor
+- 256 color
 
 #### credits
 [JetBrains](https://www.jetbrains.com/) for the original and awsome Darcula color scheme!
