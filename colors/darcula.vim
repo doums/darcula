@@ -15,92 +15,93 @@ endif
 let g:colors_name='darcula'
 
 let s:p=#{
-      \ bg: '#2B2B2B',
-      \ fg: '#A9B7C6',
-      \ cursor: '#BBBBBB',
-      \ gutter: '#313335',
-      \ selection: '#214283',
-      \ cursorLine: '#323232',
-      \ cursorLineNr: '#A4A3A3',
-      \ errorMsg: '#CC666E',
-      \ error: '#BC3F3C',
-      \ warning: '#A9B7C6',
-      \ muted: '#72737A',
-      \ link: '#287BDE',
-      \ stdOutput: '#BBBBBB',
-      \ lineNumber: '#606366',
-      \ matchBraceFg: '#FFEF28',
-      \ matchBraceBg: '#3B514D',
-      \ visual: '#10211E',
-      \ todo: '#A8C023',
-      \ search: '#32593D',
-      \ incSearch: '#155221',
-      \ foldedFg: '#8C8C8C',
-      \ foldedBg: '#3A3A3A',
-      \ constant: '#9876AA',
-      \ keyword: '#CC7832',
-      \ comment: '#808080',
-      \ docComment: '#629755',
-      \ string: '#6A8759',
-      \ number: '#6897BB',
-      \ delimiter: '#CC7832',
-      \ specialComment: '#8A653B',
-      \ function: '#FFC66D',
-      \ diffAdd: '#294436',
-      \ diffText: '#385570',
-      \ diffDelete: '#484A4A',
-      \ diffChange: '#303C47',
-      \ addStripe: '#384C38',
-      \ stripeWhiteSpace: '#4C4638',
-      \ changeStripe: '#374752',
-      \ deleteStripe: '#656E76',
-      \ typo: '#659C6B',
-      \ metaData: '#BBB529',
-      \ macroName: '#908B25',
-      \ cDataStructure: '#B5B6E3',
-      \ cStructField: '#9373A5',
-      \ debug: '#666D75',
-      \ codeWarning: '#52503A',
-      \ errorStripe: '#9E2927',
-      \ warnStripe: '#BE9117',
-      \ infoStripe: '#756D56',
-      \ typeDef: '#B9BCD1',
-      \ menu: '#46484A',
-      \ menuFg: '#AFB1B3',
-      \ menuSel: '#103A5C',
-      \ menuSBar: '#616263',
-      \ tag: '#E8BF6A',
-      \ entity: '#6D9CBE',
-      \ htmlAttribute: '#BABABA',
-      \ htmlString: '#A5C261',
-      \ tsObject: '#507874',
-      \ statusLine: '#3C3F41',
-      \ statusLineFg: '#AEB0B2',
-      \ statusLineNC: '#88898B',
-      \ tabLineSel: '#4E5254',
-      \ shCommand: '#C57633',
-      \ templateLanguage: '#232525',
-      \ rustMacro: '#4EADE5',
-      \ rustLifetime: '#20999D',
-      \ ANSIBlack: '#FFFFFF',
-      \ ANSIRed: '#FF6B68',
-      \ ANSIGreen: '#A8C023',
-      \ ANSIYellow: '#D6BF55',
-      \ ANSIBlue: '#5394EC',
-      \ ANSIMagenta: '#AE8ABE',
-      \ ANSICyan: '#299999',
-      \ ANSIGray: '#999999',
-      \ ANSIDarkGray: '#555555',
-      \ ANSIBrightRed: '#FF8785',
-      \ ANSIBrightGreen: '#A8C023',
-      \ ANSIBrightYellow: '#FFFF00',
-      \ ANSIBrightBlue: '#7EAEF1',
-      \ ANSIBrightMagenta: '#FF99FF',
-      \ ANSIBrightCyan: '#6CDADA',
-      \ ANSIWhite: '#1F1F1F',
-      \ UIBlue: '#3591C3',
-      \ UIGreen: '#499B54',
-      \ UIRed: '#C65450',
+      \ null: ['NONE', 'NONE'],
+      \ bg: ['#2B2B2B', 235],
+      \ fg: ['#A9B7C6', 152],
+      \ cursor: ['#BBBBBB', 250],
+      \ gutter: ['#313335', 236],
+      \ selection: ['#214283', 61],
+      \ cursorLine: ['#323232', 236],
+      \ cursorLineNr: ['#A4A3A3', 248],
+      \ errorMsg: ['#CC666E', 174],
+      \ error: ['#BC3F3C', 167],
+      \ warning: ['#A9B7C6', 152],
+      \ muted: ['#72737A', 243],
+      \ link: ['#287BDE', 68],
+      \ stdOutput: ['#BBBBBB', 250],
+      \ lineNumber: ['#606366', 241],
+      \ matchBraceFg: ['#FFEF28', 227],
+      \ matchBraceBg: ['#3B514D', 66],
+      \ visual: ['#10211E', 23],
+      \ todo: ['#A8C023', 149],
+      \ search: ['#32593D', 65],
+      \ incSearch: ['#155221', 29],
+      \ foldedFg: ['#8C8C8C', 245],
+      \ foldedBg: ['#3A3A3A', 237],
+      \ constant: ['#9876AA', 139],
+      \ keyword: ['#CC7832', 173],
+      \ comment: ['#808080', 244],
+      \ docComment: ['#629755', 108],
+      \ string: ['#6A8759', 108],
+      \ number: ['#6897BB', 110],
+      \ delimiter: ['#CC7832', 173],
+      \ specialComment: ['#8A653B', 137],
+      \ function: ['#FFC66D', 222],
+      \ diffAdd: ['#294436', 59],
+      \ diffText: ['#385570', 66],
+      \ diffDelete: ['#484A4A', 239],
+      \ diffChange: ['#303C47', 59],
+      \ addStripe: ['#384C38', 59],
+      \ stripeWhiteSpace: ['#4C4638', 59],
+      \ changeStripe: ['#374752', 60],
+      \ deleteStripe: ['#656E76', 102],
+      \ typo: ['#659C6B', 108],
+      \ metaData: ['#BBB529', 185],
+      \ macroName: ['#908B25', 143],
+      \ cDataStructure: ['#B5B6E3', 188],
+      \ cStructField: ['#9373A5', 139],
+      \ debug: ['#666D75', 102],
+      \ codeWarning: ['#52503A', 101],
+      \ errorStripe: ['#9E2927', 131],
+      \ warnStripe: ['#BE9117', 178],
+      \ infoStripe: ['#756D56', 102],
+      \ typeDef: ['#B9BCD1', 188],
+      \ menu: ['#46484A', 238],
+      \ menuFg: ['#AFB1B3', 249],
+      \ menuSel: ['#103A5C', 24],
+      \ menuSBar: ['#616263', 241],
+      \ tag: ['#E8BF6A', 222],
+      \ entity: ['#6D9CBE', 110],
+      \ htmlAttribute: ['#BABABA', 250],
+      \ htmlString: ['#A5C261', 150],
+      \ tsObject: ['#507874', 102],
+      \ statusLine: ['#3C3F41', 237],
+      \ statusLineFg: ['#AEB0B2', 249],
+      \ statusLineNC: ['#88898B', 245],
+      \ tabLineSel: ['#4E5254', 239],
+      \ shCommand: ['#C57633', 173],
+      \ templateLanguage: ['#232525', 235],
+      \ rustMacro: ['#4EADE5', 110],
+      \ rustLifetime: ['#20999D', 73],
+      \ ANSIBlack: ['#FFFFFF', 231],
+      \ ANSIRed: ['#FF6B68', 210],
+      \ ANSIGreen: ['#A8C023', 149],
+      \ ANSIYellow: ['#D6BF55', 186],
+      \ ANSIBlue: ['#5394EC', 111],
+      \ ANSIMagenta: ['#AE8ABE', 146],
+      \ ANSICyan: ['#299999', 73],
+      \ ANSIGray: ['#999999', 247],
+      \ ANSIDarkGray: ['#555555', 240],
+      \ ANSIBrightRed: ['#FF8785', 217],
+      \ ANSIBrightGreen: ['#A8C023', 149],
+      \ ANSIBrightYellow: ['#FFFF00', 226],
+      \ ANSIBrightBlue: ['#7EAEF1', 111],
+      \ ANSIBrightMagenta: ['#FF99FF', 219],
+      \ ANSIBrightCyan: ['#6CDADA', 116],
+      \ ANSIWhite: ['#1F1F1F', 234],
+      \ UIBlue: ['#3591C3', 74],
+      \ UIGreen: ['#499B54', 72],
+      \ UIRed: ['#C65450', 174]
       \ }
 
 " expose the palette
@@ -108,11 +109,11 @@ let darcula#palette=s:p
 
 " helper function
 function s:Hi(group, fg, ...)
-  " arguments: group, guifg, guibg, gui, guisp
+  " arguments: group, fg, bg, style
   if a:0 >= 1
     let bg=a:1
   else
-    let bg='NONE'
+    let bg=s:p.null
   endif
   if a:0 >= 2 && strlen(a:2)
     let style=a:2
@@ -121,10 +122,12 @@ function s:Hi(group, fg, ...)
   endif
   let hiList = [
         \ 'hi', a:group,
-        \ 'guifg=' . a:fg,
-        \ 'guibg=' . bg,
-        \ 'gui=' . style,
-        \ 'cterm=' . style
+        \ 'ctermfg=' . a:fg[1],
+        \ 'guifg=' . a:fg[0],
+        \ 'ctermbg=' . bg[1],
+        \ 'guibg=' . bg[0],
+        \ 'cterm=' . style,
+        \ 'gui=' . style
         \ ]
   execute join(hiList)
 endfunction
@@ -147,11 +150,11 @@ call s:Hi('Cursor', s:p.cursor)
 hi! link lCursor Cursor
 hi! link CursorIM Cursor
 hi! link CursorColumn CursorLine
-call s:Hi('CursorLine', 'NONE', s:p.cursorLine, 'NONE')
-call s:Hi('DiffAdd', 'NONE', s:p.diffAdd)
-call s:Hi('DiffChange', 'NONE', s:p.diffChange)
-call s:Hi('DiffDelete', 'NONE', s:p.diffDelete)
-call s:Hi('DiffText', 'NONE', s:p.diffText)
+call s:Hi('CursorLine', s:p.null, s:p.cursorLine, 'NONE')
+call s:Hi('DiffAdd', s:p.null, s:p.diffAdd)
+call s:Hi('DiffChange', s:p.null, s:p.diffChange)
+call s:Hi('DiffDelete', s:p.null, s:p.diffDelete)
+call s:Hi('DiffText', s:p.null, s:p.diffText)
 hi! link Directory Normal
 hi! link EndOfBuffer NonText
 call s:Hi('ErrorMsg', s:p.errorMsg)
@@ -159,7 +162,7 @@ call s:Hi('Error', s:p.error)
 call s:Hi('VertSplit', s:p.muted)
 call s:Hi('Folded', s:p.foldedFg, s:p.foldedBg)
 hi! link FoldColumn Folded
-call s:Hi('SignColumn', 'NONE', s:p.gutter)
+call s:Hi('SignColumn', s:p.null, s:p.gutter)
 call s:Hi('LineNr', s:p.lineNumber, s:p.gutter)
 call s:Hi('CursorLineNr', s:p.cursorLineNr, s:p.cursorLine)
 call s:Hi('MatchParen', s:p.matchBraceFg, s:p.matchBraceBg, 'bold')
@@ -172,10 +175,10 @@ call s:Hi('PmenuSbar', s:p.menu, s:p.menu)
 call s:Hi('PmenuThumb', s:p.menuSBar, s:p.menuSBar)
 hi! link Question Normal
 hi! link QuickFixLine Normal
-call s:Hi('Search', 'NONE', s:p.search)
-call s:Hi('IncSearch', 'NONE', s:p.incSearch)
+call s:Hi('Search', s:p.null, s:p.search)
+call s:Hi('IncSearch', s:p.null, s:p.incSearch)
 hi! link SpecialKey NonText
-call s:Hi('SpellBad', s:p.typo, 'NONE', 'underline')
+call s:Hi('SpellBad', s:p.typo, s:p.null, 'underline')
 hi! link SpellCap SpellBad
 hi! link SpellLocal SpellBad
 hi! link SpellRare SpellBad
@@ -188,7 +191,7 @@ call s:Hi('TabLineFill', s:p.statusLine, s:p.statusLine)
 call s:Hi('TabLineSel', s:p.fg, s:p.tabLineSel)
 call s:Hi('Terminal', s:p.stdOutput, s:p.bg)
 hi! link Title Special
-call s:Hi('Visual', 'NONE', s:p.selection)
+call s:Hi('Visual', s:p.null, s:p.selection)
 hi! link VisualNOS Visual
 call s:Hi('WarningMsg', s:p.warning)
 hi! link WildMenu Normal
@@ -203,13 +206,13 @@ call s:Hi('String', s:p.string)
 hi! link Character String
 call s:Hi('Number', s:p.number)
 call s:Hi('Delimiter', s:p.delimiter)
-call s:Hi('SpecialComment', s:p.specialComment, 'NONE', 'italic')
+call s:Hi('SpecialComment', s:p.specialComment, s:p.null, 'italic')
 hi! link Statement Keyword
 call s:Hi('Keyword', s:p.keyword)
 call s:Hi('Underlined', s:p.fg, s:p.bg, 'underline')
 call s:Hi('PreProc', s:p.metaData)
 hi! link Tag Keyword
-call s:Hi('Debug', s:p.debug, 'NONE', 'italic')
+call s:Hi('Debug', s:p.debug, s:p.null, 'italic')
 call s:Hi('Function', s:p.function)
 
 " helper groups
@@ -217,22 +220,22 @@ call s:Hi('docComment', s:p.docComment, s:p.bg, 'italic')
 
 " Terminal colors (for :terminal)
 let g:terminal_ansi_colors=[
-      \ s:p.ANSIBlack,
-      \ s:p.ANSIRed,
-      \ s:p.ANSIGreen,
-      \ s:p.ANSIYellow,
-      \ s:p.ANSIBlue,
-      \ s:p.ANSIMagenta,
-      \ s:p.ANSICyan,
-      \ s:p.ANSIGray,
-      \ s:p.ANSIDarkGray,
-      \ s:p.ANSIBrightRed,
-      \ s:p.ANSIBrightGreen,
-      \ s:p.ANSIBrightYellow,
-      \ s:p.ANSIBrightBlue,
-      \ s:p.ANSIBrightMagenta,
-      \ s:p.ANSIBrightCyan,
-      \ s:p.ANSIWhite
+      \ s:p.ANSIBlack[1],
+      \ s:p.ANSIRed[1],
+      \ s:p.ANSIGreen[1],
+      \ s:p.ANSIYellow[1],
+      \ s:p.ANSIBlue[1],
+      \ s:p.ANSIMagenta[1],
+      \ s:p.ANSICyan[1],
+      \ s:p.ANSIGray[1],
+      \ s:p.ANSIDarkGray[1],
+      \ s:p.ANSIBrightRed[1],
+      \ s:p.ANSIBrightGreen[1],
+      \ s:p.ANSIBrightYellow[1],
+      \ s:p.ANSIBrightBlue[1],
+      \ s:p.ANSIBrightMagenta[1],
+      \ s:p.ANSIBrightCyan[1],
+      \ s:p.ANSIWhite[1]
       \ ]
 
 " GitGutter
@@ -245,8 +248,8 @@ if &encoding == 'utf-8'
 endif
 
 " ALE
-call s:Hi('ALEInfo', 'NONE', 'NONE', 'underline')
-call s:Hi('ALEWarning', 'NONE', s:p.codeWarning)
+call s:Hi('ALEInfo', s:p.null, s:p.null, 'underline')
+call s:Hi('ALEWarning', s:p.null, s:p.codeWarning)
 hi! link ALEError Error
 call s:Hi('ALEErrorSign', s:p.errorStripe, s:p.gutter)
 call s:Hi('ALEWarningSign', s:p.warnStripe, s:p.gutter)
@@ -294,7 +297,6 @@ call s:Hi('rustEnumVariant', s:p.constant, s:p.bg, 'italic')
 hi! link rustModPath Normal
 hi! link rustModPathSep Normal
 hi! link rustAs Keyword
-hi! link rustConst Keyword
 call s:Hi('rustConst', s:p.constant, s:p.bg, 'italic')
 hi! link rustVarField Constant
 
@@ -394,7 +396,7 @@ hi! link yamlNodeTag Normal
 hi! link yamlNull Normal
 
 " Markdown
-call s:Hi('markdownH1', s:p.constant, 'NONE', 'italic')
+call s:Hi('markdownH1', s:p.constant, s:p.null, 'italic')
 hi! link markdownH2 markdownH1
 hi! link markdownH3 markdownH1
 hi! link markdownH4 markdownH1
@@ -402,7 +404,7 @@ hi! link markdownH5 markdownH1
 hi! link markdownH6 markdownH1
 hi! link markdownHeadingRule markdownH1
 hi! link markdownHeadingDelimiter markdownH1
-call s:Hi('markdownAutomaticLink', s:p.link, 'NONE', 'underline')
+call s:Hi('markdownAutomaticLink', s:p.link, s:p.null, 'underline')
 hi! link markdownBlockquote String
 hi! link markdownBoldDelimiter Keyword
 hi! link markdownBold Normal
@@ -411,10 +413,10 @@ hi! link markdownItalic Normal
 hi! link markdownCode Comment
 hi! link markdownCodeDelimiter markdownCode
 hi! link markdownCodeBlock markdownCode
-call s:Hi('markdownLinkText', s:p.link, 'NONE', 'underline')
+call s:Hi('markdownLinkText', s:p.link, s:p.null, 'underline')
 hi! link markdownLinkTextDelimiter markdownLinkText
 hi! link markdownUrlDelimiter markdownLinkText
-call s:Hi('markdownUrl', s:p.function, 'NONE', 'italic')
+call s:Hi('markdownUrl', s:p.function, s:p.null, 'italic')
 hi! link markdownIdDelimiter Keyword
 hi! link markdownLinkDelimiter Keyword
 hi! link markdownIdDeclaration Keyword
@@ -466,7 +468,7 @@ call s:Hi('shStatement', s:p.shCommand)
 hi! link bashStatement shStatement
 hi! link shDerefVar Normal
 hi! link shQuote String
-call s:Hi('shHereDoc', 'NONE', s:p.templateLanguage)
+call s:Hi('shHereDoc', s:p.null, s:p.templateLanguage)
 call s:Hi('shRedir', s:p.fg, s:p.bg, 'bold')
 hi! link shDerefSimple Normal
 hi! link shCommandSubBQ Constant

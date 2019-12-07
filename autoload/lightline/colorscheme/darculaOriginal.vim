@@ -2,11 +2,11 @@
 " License, v. 2.0. If a copy of the MPL was not distributed with this
 " file, You can obtain one at https://mozilla.org/MPL/2.0/.
 
-let s:bg=[darcula#palette.statusLine, 0]
-let s:fg=[darcula#palette.statusLineFg,0]
-let s:muted=[darcula#palette.statusLineNC, 0]
-let s:middle=[darcula#palette.gutter, 0]
-let s:onMiddle=[darcula#palette.cursor, 0]
+let s:bg=darcula#palette.statusLine
+let s:fg=darcula#palette.statusLineFg
+let s:muted=darcula#palette.statusLineNC
+let s:middle=darcula#palette.gutter
+let s:onMiddle=darcula#palette.cursor
 let s:mutedMiddle=s:middle
 let s:onMutedMid=s:muted
 let s:secondary=s:bg
@@ -20,12 +20,12 @@ let s:onMutedRight=s:muted
 let s:normal=s:bg
 let s:onNormal=s:fg
 let s:visual=s:bg
-let s:onVisual=[darcula#palette.UIBlue, 0]
+let s:onVisual=darcula#palette.UIBlue
 let s:insert=s:bg
-let s:onInsert=[darcula#palette.UIGreen, 0]
+let s:onInsert=darcula#palette.UIGreen
 let s:replace=s:bg
-let s:onReplace=[darcula#palette.UIRed, 0]
-let s:tabSel=[darcula#palette.tabLineSel, 0]
+let s:onReplace=darcula#palette.UIRed
+let s:tabSel=darcula#palette.tabLineSel
 " let s:error=['#', 0]
 " let s:warning=['#', 0]
 
