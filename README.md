@@ -23,6 +23,10 @@ put this in your `.vimrc`
 ```
 colorscheme darcula
 ```
+to fully enjoy the color scheme and if your terminal supports [Truecolor](https://gist.github.com/XVilka/8346728) add
+```
+set termguicolors
+```
 
 if you use [lightline](https://github.com/itchyny/lightline.vim)
 ```
