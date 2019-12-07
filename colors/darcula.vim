@@ -220,22 +220,22 @@ call s:Hi('docComment', s:p.docComment, s:p.bg, 'italic')
 
 " Terminal colors (for :terminal)
 let g:terminal_ansi_colors=[
-      \ s:p.ANSIBlack[1],
-      \ s:p.ANSIRed[1],
-      \ s:p.ANSIGreen[1],
-      \ s:p.ANSIYellow[1],
-      \ s:p.ANSIBlue[1],
-      \ s:p.ANSIMagenta[1],
-      \ s:p.ANSICyan[1],
-      \ s:p.ANSIGray[1],
-      \ s:p.ANSIDarkGray[1],
-      \ s:p.ANSIBrightRed[1],
-      \ s:p.ANSIBrightGreen[1],
-      \ s:p.ANSIBrightYellow[1],
-      \ s:p.ANSIBrightBlue[1],
-      \ s:p.ANSIBrightMagenta[1],
-      \ s:p.ANSIBrightCyan[1],
-      \ s:p.ANSIWhite[1]
+      \ s:p.ANSIBlack[0],
+      \ s:p.ANSIRed[0],
+      \ s:p.ANSIGreen[0],
+      \ s:p.ANSIYellow[0],
+      \ s:p.ANSIBlue[0],
+      \ s:p.ANSIMagenta[0],
+      \ s:p.ANSICyan[0],
+      \ s:p.ANSIGray[0],
+      \ s:p.ANSIDarkGray[0],
+      \ s:p.ANSIBrightRed[0],
+      \ s:p.ANSIBrightGreen[0],
+      \ s:p.ANSIBrightYellow[0],
+      \ s:p.ANSIBrightBlue[0],
+      \ s:p.ANSIBrightMagenta[0],
+      \ s:p.ANSIBrightCyan[0],
+      \ s:p.ANSIWhite[0]
       \ ]
 
 " GitGutter
