@@ -31,7 +31,6 @@ let s:p=#{
       \ lineNumber: ['#606366', 241],
       \ matchBraceFg: ['#FFEF28', 220],
       \ matchBraceBg: ['#3B514D', 59],
-      \ visual: ['#10211E', 16],
       \ todo: ['#A8C023', 142],
       \ search: ['#32593D', 23],
       \ incSearch: ['#155221', 22],
