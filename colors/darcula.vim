@@ -162,8 +162,8 @@ call s:Hi('Folded', s:p.foldedFg, s:p.foldedBg)
 hi! link FoldColumn Folded
 call s:Hi('SignColumn', s:p.null, s:p.gutter)
 call s:Hi('LineNr', s:p.lineNumber, s:p.gutter)
-hi! LineNrAbove LineNr
-hi! LineNrBelow LineNr
+hi! link LineNrAbove LineNr
+hi! link LineNrBelow LineNr
 call s:Hi('CursorLineNr', s:p.cursorLineNr, s:p.cursorLine)
 call s:Hi('MatchParen', s:p.matchBraceFg, s:p.matchBraceBg, 'bold')
 call s:Hi('ModeMsg', s:p.stdOutput)
@@ -217,15 +217,15 @@ call s:Hi('Function', s:p.function)
 
 " neovim
 if has('nvim')
-  hi! NormalFloat Pmenu
-  hi! NormalNC Normal
-  hi! MsgArea Normal
-  hi! MsgSeparator StatusLine
-  hi! QuickFixLine Normal
-  hi! Substitute Search
+  hi! link NormalFloat Pmenu
+  hi! link NormalNC Normal
+  hi! link MsgArea Normal
+  hi! link MsgSeparator StatusLine
+  hi! link QuickFixLine Normal
+  hi! link Substitute Search
   " TermCursor
   " TermCursorNC
-  hi! Whitespace NonText
+  hi! link Whitespace NonText
 endif
 
 " helper groups
