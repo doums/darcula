@@ -162,6 +162,8 @@ call s:Hi('Folded', s:p.foldedFg, s:p.foldedBg)
 hi! link FoldColumn Folded
 call s:Hi('SignColumn', s:p.null, s:p.gutter)
 call s:Hi('LineNr', s:p.lineNumber, s:p.gutter)
+hi! LineNrAbove LineNr
+hi! LineNrBelow LineNr
 call s:Hi('CursorLineNr', s:p.cursorLineNr, s:p.cursorLine)
 call s:Hi('MatchParen', s:p.matchBraceFg, s:p.matchBraceBg, 'bold')
 call s:Hi('ModeMsg', s:p.stdOutput)
@@ -192,7 +194,7 @@ hi! link Title Special
 call s:Hi('Visual', s:p.null, s:p.selection)
 hi! link VisualNOS Visual
 call s:Hi('WarningMsg', s:p.warning)
-hi! link WildMenu Normal
+hi! link WildMenu PmenuSel
 call s:Hi('Comment', s:p.comment)
 hi! link Identifier Normal
 hi! link Type Keyword
@@ -212,6 +214,19 @@ call s:Hi('PreProc', s:p.metaData)
 hi! link Tag Keyword
 call s:Hi('Debug', s:p.debug, s:p.null, 'italic')
 call s:Hi('Function', s:p.function)
+
+" neovim
+if has('nvim')
+  hi! NormalFloat Pmenu
+  hi! NormalNC Normal
+  hi! MsgArea Normal
+  hi! MsgSeparator StatusLine
+  hi! QuickFixLine Normal
+  hi! Substitute Search
+  " TermCursor
+  " TermCursorNC
+  hi! Whitespace NonText
+endif
 
 " helper groups
 call s:Hi('docComment', s:p.docComment, s:p.bg, 'italic')
