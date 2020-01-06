@@ -97,9 +97,9 @@ let s:p={
       \ 'ANSIBrightMagenta': ['#FF99FF', 219],
       \ 'ANSIBrightCyan': ['#6CDADA', 116],
       \ 'ANSIWhite': ['#1F1F1F', 234],
-      \ 'UIBlue': ['#3591C3', 67],
-      \ 'UIGreen': ['#499B54', 71],
-      \ 'UIRed': ['#C65450', 131]
+      \ 'UIBlue': ['#3592C4', 67],
+      \ 'UIGreen': ['#499C54', 71],
+      \ 'UIRed': ['#C75450', 131]
       \ }
 
 " expose the palette
