@@ -266,7 +266,6 @@ let g:terminal_ansi_colors=[
 call s:Hi('GitGutterAdd', s:p.addStripe, s:p.addStripe)
 call s:Hi('GitGutterChange', s:p.changeStripe, s:p.changeStripe)
 call s:Hi('GitGutterDelete', s:p.deleteStripe, s:p.gutter)
-call s:Hi('GitGutterChangeDelete', s:p.stripeWhiteSpace, s:p.stripeWhiteSpace)
 if &encoding == 'utf-8'
   let g:gitgutter_sign_removed = '▶'
 endif
