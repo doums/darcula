@@ -84,7 +84,7 @@ let s:p={
       \ 'templateLanguage': ['#232525', 235],
       \ 'rustMacro': ['#4EADE5', 74],
       \ 'rustLifetime': ['#20999D', 37],
-      \ 'duplicateFromServer': ['#5E5339', 37],
+      \ 'duplicateFromServer': ['#5E5339', 59],
       \ 'ANSIBlack': ['#FFFFFF', 231],
       \ 'ANSIRed': ['#FF6B68', 210],
       \ 'ANSIGreen': ['#A8C023', 142],
