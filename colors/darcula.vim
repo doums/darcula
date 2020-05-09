@@ -84,6 +84,7 @@ let s:p={
       \ 'templateLanguage': ['#232525', 235],
       \ 'rustMacro': ['#4EADE5', 74],
       \ 'rustLifetime': ['#20999D', 37],
+      \ 'duplicateFromServer': ['#5E5339', 37], " TODO find the corresponding 256color
       \ 'ANSIBlack': ['#FFFFFF', 231],
       \ 'ANSIRed': ['#FF6B68', 210],
       \ 'ANSIGreen': ['#A8C023', 142],
@@ -220,6 +221,13 @@ call s:Hi('Function', s:p.function)
 
 " neovim
 if has('nvim')
+  " the following code snippet fix an issue with CursorLine hi group
+  " see https://github.com/neovim/neovim/issues/9019
+  if has('termguicolors') && &termguicolors
+    hi CursorLine ctermfg=white
+  else
+    hi CursorLine guifg=white
+  endif
   hi! link NormalFloat Pmenu
   hi! link NormalNC NormalFg
   hi! link MsgArea NormalFg
@@ -229,13 +237,11 @@ if has('nvim')
   " TermCursor
   " TermCursorNC
   hi! link Whitespace NonText
-  " the following code snippet fix an issue with CursorLine hi group
-  " see https://github.com/neovim/neovim/issues/9019
-  if has('termguicolors') && &termguicolors
-    hi CursorLine ctermfg=white
-  else
-    hi CursorLine guifg=white
-  endif
+  hi! link healthSuccess IncSearch
+  call s:Hi('NvimInternalError', s:p.error, s:p.error)
+  call s:Hi('RedrawDebugClear', s:p.fg, s:p.duplicateFromServer)
+  call s:Hi('RedrawDebugComposed', s:p.fg, s:p.search)
+  call s:Hi('RedrawDebugRecompose', s:p.fg, s:p.codeError)
 endif
 
 " helper groups
