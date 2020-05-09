@@ -85,6 +85,8 @@ let s:p={
       \ 'rustMacro': ['#4EADE5', 74],
       \ 'rustLifetime': ['#20999D', 37],
       \ 'duplicateFromServer': ['#5E5339', 59],
+      \ 'hintBg': ['#3B3B3B', 237],
+      \ 'hintFg': ['#787878', 243],
       \ 'ANSIBlack': ['#FFFFFF', 231],
       \ 'ANSIRed': ['#FF6B68', 210],
       \ 'ANSIGreen': ['#A8C023', 142],
