@@ -105,7 +105,8 @@ let s:p={
       \ 'ANSIWhite': ['#1F1F1F', 234],
       \ 'UIBlue': ['#3592C4', 67],
       \ 'UIGreen': ['#499C54', 71],
-      \ 'UIRed': ['#C75450', 131]
+      \ 'UIRed': ['#C75450', 131],
+      \ 'UIBrown': ['#93896C', 102]
       \ }
 
 " expose the palette

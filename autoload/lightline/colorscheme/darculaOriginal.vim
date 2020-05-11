@@ -28,6 +28,7 @@ let s:onReplace=darcula#palette.UIRed
 let s:tabSel=darcula#palette.tabLineSel
 let s:error=darcula#palette.UIRed
 let s:warning=darcula#palette.warnStripe
+let s:info=darcula#palette.UIBrown
 
 let s:p = {'normal': {}, 'inactive': {}, 'insert': {}, 'replace': {}, 'visual': {}, 'tabline': {}}
 let s:p.normal.left = [ [ s:onNormal, s:normal, 'bold' ], [ s:onSecondary, s:secondary ] ]
@@ -48,6 +49,7 @@ let s:p.tabline.middle = [ [ s:bg, s:bg ] ]
 let s:p.tabline.right = copy(s:p.normal.right)
 let s:p.normal.error = [ [ s:error, s:middle ] ]
 let s:p.normal.warning = [ [ s:warning, s:middle ] ]
+let s:p.normal.info = [ [ s:info, s:middle ] ]
 let s:p.normal.ok = [ [ s:onInsert, s:middle ] ]
 
 let g:lightline#colorscheme#darculaOriginal#palette = lightline#colorscheme#flatten(s:p)
