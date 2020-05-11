@@ -87,7 +87,7 @@ let s:p={
       \ 'duplicateFromServer': ['#5E5339', 59],
       \ 'hintBg': ['#3B3B3B', 237],
       \ 'hintFg': ['#787878', 243],
-      \ 'wrapGuide': ['#2f2f2f', 236],
+      \ 'wrapGuide': ['#2F2F2F', 236],
       \ 'ANSIBlack': ['#FFFFFF', 231],
       \ 'ANSIRed': ['#FF6B68', 210],
       \ 'ANSIGreen': ['#A8C023', 142],
