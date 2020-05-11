@@ -87,6 +87,7 @@ let s:p={
       \ 'duplicateFromServer': ['#5E5339', 59],
       \ 'hintBg': ['#3B3B3B', 237],
       \ 'hintFg': ['#787878', 243],
+      \ 'wrapGuide': ['#4D4D4D', 239],
       \ 'ANSIBlack': ['#FFFFFF', 231],
       \ 'ANSIRed': ['#FF6B68', 210],
       \ 'ANSIGreen': ['#A8C023', 142],
@@ -149,7 +150,7 @@ function darcula#Hi(group, fg, ...)
 endfunction
 
 call s:Hi('Normal', s:p.fg, s:p.bg)
-call s:Hi('ColorColumn', s:p.lineNumber)
+call s:Hi('ColorColumn', s:p.null, s:p.wrapGuide)
 hi! link Conceal NormalFg
 call s:Hi('Cursor', s:p.cursor)
 hi! link lCursor Cursor
