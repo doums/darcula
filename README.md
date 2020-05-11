@@ -2,7 +2,7 @@
 
 ![darcula](https://image.petitmur.beer/darcula.png)
 
-:smiling_imp: A [Vim](https://www.vim.org/)/[NeoVim](https://neovim.io/) color scheme reproduction of the official [JetBrains](https://www.jetbrains.com/) IDE Darcula theme
+:smiling_imp: A [Vim](https://www.vim.org/)/[Neovim](https://neovim.io/) color scheme reproduction of the official [JetBrains](https://www.jetbrains.com/) IDE Darcula theme
 
 ### install
 If you use a plugin manager, follow the traditional way.
