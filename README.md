@@ -1,4 +1,4 @@
-## darcula
+## Darcula
 
 ![darcula](https://image.petitmur.beer/darcula.png)
 
@@ -20,34 +20,36 @@ Then run in vim:
 If you use vim package `:h packages`.
 
 ### usage
-put this in your `.vimrc`/`init.vim`
+Put this in your `.vimrc`/`init.vim`:
 ```
 colorscheme darcula
 ```
-to fully enjoy the color scheme and if your terminal supports [Truecolor](https://gist.github.com/XVilka/8346728) add
+To fully enjoy the color scheme and if your terminal supports [Truecolor](https://gist.github.com/XVilka/8346728) add
 ```
 set termguicolors
 ```
 
-if you use [lightline](https://github.com/itchyny/lightline.vim)
+If you use [lightline](https://github.com/itchyny/lightline.vim):
 ```
 let g:lightline = { 'colorscheme': 'darculaOriginal' }
 ```
 NOTE: lightline already provides a "darcula" color scheme that I find simply bad. I strongly recommend to use mine instead (using `darculaOriginal` instead of `darcula` in the above config).
 
 ### API
-the palette is exposed through the dictionary `darcula#palette`
+The palette is exposed through the dictionary `darcula#palette`.
 ```
 echo darcula#palette.comment
 ```
-you can create/change highlight groups with `darcula#Hi()` function
+You can create/change highlight groups with `darcula#Hi()` function:
 ```
 " arguments: group, foreground, background, style
 " you can omit the last two arguments
 call darcula#Hi('rustLifetime', darcula#palette.macroName, darcula#palette.bg, 'italic')
 ```
 
-### plugin integration examples
+### helper groups
+Darcula provides some helper groups.\
+You can use them with `hi link`.
 
 [GitGutter](https://github.com/airblade/vim-gitgutter)
 ```
