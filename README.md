@@ -44,7 +44,7 @@ hexadecimal color with a `#` prefix
 
 **256color:** `number`\
 should be between 16-255\
-ANSI 256 color (useful for non truecolor terminals that do not support `set termguicolors`)\
+ANSI 256 color (useful for non truecolor terminals that do not support `set termguicolors`)
 
 #### `dictionary` darcula#palette: { key: `string`: value: `colors` }
 the colors palette of Darcula
