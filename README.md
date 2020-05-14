@@ -35,16 +35,39 @@ let g:lightline = { 'colorscheme': 'darculaOriginal' }
 ```
 NOTE: lightline already provides a "darcula" color scheme that I find simply bad. I strongly recommend to use mine instead (using `darculaOriginal` instead of `darcula` in the above config).
 
-### API
-The palette is exposed through the dictionary `darcula#palette`.
+### VimScript API
+
+#### `list` colors: [ truecolor: `string`, 256color: `number` ]
+
+**truecolor:** `string`\
+hexadecimal color with a `#` prefix
+
+**256color:** `number`\
+should be between 16-255
+ANSI 256 color (useful for non truecolor terminals that do not support `set termguicolors`)\
+
+#### `dictionary` darcula#palette: { key: `string`: value: `colors` }
+the colors palette of Darcula
+
+#### `function` darcula#Hi(group: `string`, fg: `colors`, bg: `?colors`, style: `?string`)
+
+**group:** `string`\
+group name
+
+**fg:** `colors`\
+foreground colors
+
+**bg:** `?colors`\
+background colors
+
+**style:** `?string`\
+text style (for possible values see `:h bold`)
+
+#### example:
 ```
-echo darcula#palette.comment
-```
-You can create/change highlight groups with `darcula#Hi()` function:
-```
-" arguments: group, foreground, background, style
-" you can omit the last two arguments
 call darcula#Hi('rustLifetime', darcula#palette.macroName, darcula#palette.bg, 'italic')
+call darcula#Hi('Comment', [ '#eeeeee', 255 ], darcula#palette.null, 'italic')
+call darcula#Hi('BlackFg', [ '#000000', 16 ])
 ```
 
 ### helper groups
