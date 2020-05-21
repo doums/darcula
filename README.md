@@ -50,6 +50,7 @@ ANSI 256 color (useful for non truecolor terminals that do not support `set term
 the colors palette of Darcula
 
 #### `function` darcula#Hi(group: `string`, fg: `colors`, bg: `?colors`, style: `?string`)
+helper function to create highlight group
 
 **group:** `string`\
 group name
