@@ -53,7 +53,7 @@ let s:airline_b_inactive = [ darcula#palette.foldedFg[0], darcula#palette.folded
 let s:airline_c_inactive = [ darcula#palette.foldedFg[0], darcula#palette.foldedBg[0], darcula#palette.foldedFg[1], darcula#palette.foldedBg[1], '' ]
 let g:airline#themes#darcula#palette.inactive = airline#themes#generate_color_map(s:airline_a_inactive, s:airline_b_inactive, s:airline_c_inactive)
 let g:airline#themes#darcula#palette.inactive_modified = {
-      \ 'airline_c': [ '#875faf' , '' , 97 , '' , '' ] ,
+      \ 'airline_c': [ darcula#palette.cStructField[0], '', darcula#palette.cStructField[1], '', 'italic' ] ,
       \ }
 
 let s:airline_a_commandline = [ darcula#palette.bg[0], darcula#palette.todo[0], darcula#palette.bg[1], darcula#palette.todo[1] ]
