@@ -84,6 +84,10 @@ let s:p={
       \ 'templateLanguage': ['#232525', 235],
       \ 'rustMacro': ['#4EADE5', 74],
       \ 'rustLifetime': ['#20999D', 37],
+      \ 'duplicateFromServer': ['#5E5339', 59],
+      \ 'hintBg': ['#3B3B3B', 237],
+      \ 'hintFg': ['#787878', 243],
+      \ 'wrapGuide': ['#2F2F2F', 236],
       \ 'ANSIBlack': ['#FFFFFF', 231],
       \ 'ANSIRed': ['#FF6B68', 210],
       \ 'ANSIGreen': ['#A8C023', 142],
@@ -102,7 +106,8 @@ let s:p={
       \ 'ANSIWhite': ['#1F1F1F', 234],
       \ 'UIBlue': ['#3592C4', 67],
       \ 'UIGreen': ['#499C54', 71],
-      \ 'UIRed': ['#C75450', 131]
+      \ 'UIRed': ['#C75450', 131],
+      \ 'UIBrown': ['#93896C', 102]
       \ }
 
 " expose the palette
@@ -145,7 +150,7 @@ function darcula#Hi(group, fg, ...)
 endfunction
 
 call s:Hi('Normal', s:p.fg, s:p.bg)
-call s:Hi('ColorColumn', s:p.lineNumber)
+call s:Hi('ColorColumn', s:p.null, s:p.wrapGuide)
 hi! link Conceal NormalFg
 call s:Hi('Cursor', s:p.cursor)
 hi! link lCursor Cursor
@@ -218,8 +223,15 @@ hi! link Tag Keyword
 call s:Hi('Debug', s:p.debug, s:p.null, 'italic')
 call s:Hi('Function', s:p.function)
 
-" neovim
+" Neovim
 if has('nvim')
+  " the following code snippet fix an issue with CursorLine hi group
+  " see https://github.com/neovim/neovim/issues/9019
+  if has('termguicolors') && &termguicolors
+    hi CursorLine ctermfg=white
+  else
+    hi CursorLine guifg=white
+  endif
   hi! link NormalFloat Pmenu
   hi! link NormalNC NormalFg
   hi! link MsgArea NormalFg
@@ -229,54 +241,67 @@ if has('nvim')
   " TermCursor
   " TermCursorNC
   hi! link Whitespace NonText
-  " the following code snippet fix an issue with CursorLine hi group
-  " see https://github.com/neovim/neovim/issues/9019
-  if has('termguicolors') && &termguicolors
-    hi CursorLine ctermfg=white
-  else
-    hi CursorLine guifg=white
-  endif
+  hi! link healthSuccess IncSearch
+  call s:Hi('NvimInternalError', s:p.error, s:p.error)
+  call s:Hi('RedrawDebugClear', s:p.fg, s:p.duplicateFromServer)
+  call s:Hi('RedrawDebugComposed', s:p.fg, s:p.search)
+  call s:Hi('RedrawDebugRecompose', s:p.fg, s:p.codeError)
+  " Terminal colors
+  let g:terminal_color_0 = s:p.ANSIBlack[0]
+  let g:terminal_color_1 = s:p.ANSIRed[0]
+  let g:terminal_color_2 = s:p.ANSIGreen[0]
+  let g:terminal_color_3 = s:p.ANSIYellow[0]
+  let g:terminal_color_4 = s:p.ANSIBlue[0]
+  let g:terminal_color_5 = s:p.ANSIMagenta[0]
+  let g:terminal_color_6 = s:p.ANSICyan[0]
+  let g:terminal_color_7 = s:p.ANSIGray[0]
+  let g:terminal_color_8 = s:p.ANSIDarkGray[0]
+  let g:terminal_color_9 = s:p.ANSIBrightRed[0]
+  let g:terminal_color_10 = s:p.ANSIBrightGreen[0]
+  let g:terminal_color_11 = s:p.ANSIBrightYellow[0]
+  let g:terminal_color_12 = s:p.ANSIBrightBlue[0]
+  let g:terminal_color_13 = s:p.ANSIBrightMagenta[0]
+  let g:terminal_color_14 = s:p.ANSIBrightCyan[0]
+  let g:terminal_color_15 = s:p.ANSIWhite[0]
 endif
 
 " helper groups
 call s:Hi('docComment', s:p.docComment, s:p.null, 'italic')
 call s:Hi('NormalFg', s:p.fg)
+call s:Hi('GitAddStripe', s:p.addStripe, s:p.addStripe)
+call s:Hi('GitChangeStripe', s:p.changeStripe, s:p.changeStripe)
+call s:Hi('GitDeleteStripe', s:p.deleteStripe, s:p.gutter)
+call s:Hi('CodeError', s:p.null, s:p.codeError)
+call s:Hi('CodeWarning', s:p.null, s:p.codeWarning)
+call s:Hi('CodeInfo', s:p.null, s:p.infoStripe)
+call s:Hi('CodeHint', s:p.hintFg, s:p.hintBg)
+call s:Hi('ErrorSign', s:p.errorStripe, s:p.gutter)
+call s:Hi('WarningSign', s:p.warnStripe, s:p.gutter)
+call s:Hi('InfoSign', s:p.infoStripe, s:p.gutter)
+call s:Hi('IdentifierUnderCaret', s:p.null, s:p.identifierUnderCaret)
+call s:Hi('IdentifierUnderCaretWrite', s:p.null, s:p.identifierUnderCaretWrite)
 
-" Terminal colors (for :terminal)
-let g:terminal_ansi_colors=[
-      \ s:p.ANSIBlack[0],
-      \ s:p.ANSIRed[0],
-      \ s:p.ANSIGreen[0],
-      \ s:p.ANSIYellow[0],
-      \ s:p.ANSIBlue[0],
-      \ s:p.ANSIMagenta[0],
-      \ s:p.ANSICyan[0],
-      \ s:p.ANSIGray[0],
-      \ s:p.ANSIDarkGray[0],
-      \ s:p.ANSIBrightRed[0],
-      \ s:p.ANSIBrightGreen[0],
-      \ s:p.ANSIBrightYellow[0],
-      \ s:p.ANSIBrightBlue[0],
-      \ s:p.ANSIBrightMagenta[0],
-      \ s:p.ANSIBrightCyan[0],
-      \ s:p.ANSIWhite[0]
-      \ ]
-
-" GitGutter
-call s:Hi('GitGutterAdd', s:p.addStripe, s:p.addStripe)
-call s:Hi('GitGutterChange', s:p.changeStripe, s:p.changeStripe)
-call s:Hi('GitGutterDelete', s:p.deleteStripe, s:p.gutter)
-if &encoding == 'utf-8'
-  let g:gitgutter_sign_removed = '▶'
+" Vim terminal colors (for :terminal)
+if !has('nvim')
+  let g:terminal_ansi_colors=[
+        \ s:p.ANSIBlack[0],
+        \ s:p.ANSIRed[0],
+        \ s:p.ANSIGreen[0],
+        \ s:p.ANSIYellow[0],
+        \ s:p.ANSIBlue[0],
+        \ s:p.ANSIMagenta[0],
+        \ s:p.ANSICyan[0],
+        \ s:p.ANSIGray[0],
+        \ s:p.ANSIDarkGray[0],
+        \ s:p.ANSIBrightRed[0],
+        \ s:p.ANSIBrightGreen[0],
+        \ s:p.ANSIBrightYellow[0],
+        \ s:p.ANSIBrightBlue[0],
+        \ s:p.ANSIBrightMagenta[0],
+        \ s:p.ANSIBrightCyan[0],
+        \ s:p.ANSIWhite[0]
+        \ ]
 endif
-
-" ALE
-call s:Hi('ALEInfo', s:p.null, s:p.null, 'underline')
-call s:Hi('ALEWarning', s:p.null, s:p.codeWarning)
-hi! link ALEError Error
-call s:Hi('ALEErrorSign', s:p.errorStripe, s:p.gutter)
-call s:Hi('ALEWarningSign', s:p.warnStripe, s:p.gutter)
-call s:Hi('ALEInfoSign', s:p.infoStripe, s:p.gutter)
 
 " C/C++
 call s:Hi('cMacroName', s:p.macroName)
