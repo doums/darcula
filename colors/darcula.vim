@@ -27,7 +27,7 @@ let s:p={
       \ 'errorMsg': ['#CC666E', 174],
       \ 'error': ['#BC3F3C', 131],
       \ 'warning': ['#A9B7C6', 145],
-      \ 'muted': ['#72737A', 243],
+      \ 'muted': ['#606060', 241],
       \ 'link': ['#287BDE', 32],
       \ 'stdOutput': ['#BBBBBB', 250],
       \ 'lineNumber': ['#606366', 241],
@@ -151,7 +151,7 @@ endfunction
 
 call s:Hi('Normal', s:p.fg, s:p.bg)
 call s:Hi('ColorColumn', s:p.null, s:p.wrapGuide)
-hi! link Conceal NormalFg
+call s:Hi('Conceal', s:p.muted, s:p.bg)
 call s:Hi('Cursor', s:p.cursor)
 hi! link lCursor Cursor
 hi! link CursorIM Cursor

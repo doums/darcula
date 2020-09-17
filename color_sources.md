@@ -12,7 +12,7 @@ cursorLineNr: #A4A3A3 General/Code/Line number on caret row
 errorMsg: #CC666E Console Colors/Log Console/Error
 error: #BC3F3C General/Errors and Warnings/Unknown symbol
 warning: #A9B7C6 General/Text/Default text
-muted: #72737A General/Errors and Warnings/Unused symbol
+muted: #606060 General/Text/Whitespace
 link: #287BDE General/Hyperlinks/Followed
 stdOutput: #BBBBBB Console Colors/Console/System output
 lineNumber: #606366 General/Code/Line number
