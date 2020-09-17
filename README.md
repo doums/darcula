@@ -1,6 +1,6 @@
 ## Darcula
 
-![darcula](https://image.petitmur.beer/darcula.png)
+![darcula](./img/full_screen.png)
 
 :smiling_imp: A [Vim](https://www.vim.org/)/[Neovim](https://neovim.io/) color scheme reproduction of the official [JetBrains](https://www.jetbrains.com/) IDE Darcula theme
 
@@ -37,32 +37,11 @@ NOTE: lightline already provides a "darcula" color scheme that I find simply bad
 
 ### VimScript API
 
-#### `list` colors: [ truecolor: `string`, 256color: `number` ]
-
-**truecolor:** `string`\
-hexadecimal color with a `#` prefix
-
-**256color:** `number`\
-should be between 16-255\
-ANSI 256 color (useful for non truecolor terminals that do not support `set termguicolors`)
-
-#### `dictionary` darcula#palette: { key: `string`: value: `colors` }
+#### darcula#palette
 the colors palette of Darcula
 
-#### `function` darcula#Hi(group: `string`, fg: `colors`, bg: `?colors`, style: `?string`)
-helper function to create highlight group
-
-**group:** `string`\
-group name
-
-**fg:** `colors`\
-foreground colors
-
-**bg:** `?colors`\
-background colors
-
-**style:** `?string`\
-text style (for possible values see `:h bold`)
+#### darcula#Hi
+helper function to create/modify highlight group
 
 #### example:
 ```
