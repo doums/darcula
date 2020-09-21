@@ -73,10 +73,10 @@ duplicateFromServer: #5E5339 General/Errors and Warnings/Duplicate from server
 hintBg: #3B3B3B Language Defaults/Inline hints/Parameters/Default
 hintFg: #787878 Language Defaults/Inline hints/Parameters/Default
 wrapGuide: #2F2F2F arbitrary
-UIBlue: #3592C4 67
-UIGreen: #499C54 71
-UIRed: #C75450 131
-UIBrown: #93896C 102
+UIBlue: #3592C4 pipette
+UIGreen: #499C54 pipette
+UIRed: #C75450 pipette
+UIBrown: #93896C pipette
 
 ## Console Colors/ANSI Colors
 
