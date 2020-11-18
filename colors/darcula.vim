@@ -17,7 +17,8 @@ let s:p={
       \ 'null': ['NONE', 'NONE'],
       \ 'bg': ['#2B2B2B', 235],
       \ 'fg': ['#A9B7C6', 145],
-      \ 'cursor': ['#BBBBBB', 250],
+      \ 'cursor': ['#3a3a3a', 237],
+      \ 'cursorBg': ['#BBBBBB', 250],
       \ 'identifierUnderCaret': ['#344134', 237],
       \ 'identifierUnderCaretWrite': ['#40332B', 58],
       \ 'gutter': ['#313335', 236],
@@ -27,7 +28,7 @@ let s:p={
       \ 'errorMsg': ['#CC666E', 174],
       \ 'error': ['#BC3F3C', 131],
       \ 'warning': ['#A9B7C6', 145],
-      \ 'muted': ['#606060', 241],
+      \ 'muted': ['#72737A', 243],
       \ 'link': ['#287BDE', 32],
       \ 'stdOutput': ['#BBBBBB', 250],
       \ 'lineNumber': ['#606366', 241],
@@ -68,8 +69,8 @@ let s:p={
       \ 'infoStripe': ['#756D56', 101],
       \ 'typeDef': ['#B9BCD1', 146],
       \ 'menu': ['#46484A', 238],
-      \ 'menuFg': ['#BBBBBB', 250],
-      \ 'menuSel': ['#113A5C', 23],
+      \ 'menuFg': ['#AFB1B3', 249],
+      \ 'menuSel': ['#103A5C', 23],
       \ 'menuSBar': ['#616263', 241],
       \ 'tag': ['#E8BF6A', 180],
       \ 'entity': ['#6D9CBE', 109],
@@ -77,8 +78,8 @@ let s:p={
       \ 'htmlString': ['#A5C261', 143],
       \ 'tsObject': ['#507874', 66],
       \ 'statusLine': ['#3C3F41', 237],
-      \ 'statusLineFg': ['#BBBBBB', 250],
-      \ 'statusLineNC': ['#787878', 243],
+      \ 'statusLineFg': ['#AEB0B2', 249],
+      \ 'statusLineNC': ['#88898B', 245],
       \ 'tabLineSel': ['#4E5254', 239],
       \ 'shCommand': ['#C57633', 137],
       \ 'templateLanguage': ['#232525', 235],
@@ -151,8 +152,8 @@ endfunction
 
 call s:Hi('Normal', s:p.fg, s:p.bg)
 call s:Hi('ColorColumn', s:p.null, s:p.wrapGuide)
-call s:Hi('Conceal', s:p.muted, s:p.bg)
-call s:Hi('Cursor', s:p.cursor)
+hi! link Conceal NormalFg
+call s:Hi('Cursor', s:p.cursor, s:p.cursorBg)
 hi! link lCursor Cursor
 hi! link CursorIM Cursor
 hi! link CursorColumn CursorLine
