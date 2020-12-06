@@ -223,6 +223,99 @@ hi! link Tag Keyword
 call s:Hi('Debug', s:p.debug, s:p.null, 'italic')
 call s:Hi('Function', s:p.function)
 
+" Treesitter
+call s:Hi('Normal', s:p.fg, s:p.bg, 'NONE')
+call s:Hi('Bold', s:p.fg, s:p.bg, 'bold')
+call s:Hi('Italic', s:p.fg, s:p.bg, 'italic')
+
+call s:Hi('Yellow', s:p.function)
+call s:Hi('YellowItalic', s:p.function, s:p.null, 'italic')
+call s:Hi('BrightYellow', s:p.metaData)
+
+call s:Hi('Purple', s:p.constant)
+call s:Hi('PurpleItalic', s:p.constant, s:p.null, 'italic')
+
+call s:Hi('Orange', s:p.keyword)
+call s:Hi('Green', s:p.string)
+call s:Hi('Blue', s:p.number)
+call s:Hi('Brown', s:p.specialComment, s:p.null, 'italic')
+
+call s:Hi('Underlined', s:p.fg, s:p.null, 'underline')
+
+call s:Hi('Error', s:p.error)
+
+"" Constants
+highlight! link TSConstant Purple
+highlight! link TSConstBuiltin Purple
+
+highlight! link TSString Green
+highlight! link TSStringRegex BrightYellow
+highlight! link TSStringEscape Orange
+highlight! link TSCharacter Green
+
+highlight! link TSNumber Blue
+highlight! link TSBoolean Orange
+highlight! link TSFloat Blue
+
+"" Functions
+highlight! link TSFunction Yellow
+highlight! link TSFuncMacro YellowItalic
+highlight! link TSFuncBuiltin Italic
+
+highlight! link TSParameter Normal
+highlight! link TSParameterReference Normal
+
+highlight! link TSMethod PurpleItalic
+highlight! link TSField Purple
+highlight! link TSProperty Purple
+
+highlight! link TSConstructor Orange
+
+"" Keywords
+highlight! link TSConditional Orange
+highlight! link TSRepeat Orange
+highlight! link TSLabel BrightYellow
+
+highlight! link TSKeyword Orange
+highlight! link TSKeywordFunction YellowItalic
+highlight! link TSKeywordOperator YellowItalic
+highlight! link TSOperator Normal
+highlight! link TSException Orange
+highlight! link TSInclude Orange
+
+highlight! link TSType Blue
+highlight! link TSTypeBuiltin Blue
+
+highlight! link TSNamespace Blue
+highlight! link TSAttribute BrightYellow
+
+"" Variables
+highlight! link TSVariable Normal
+highlight! link TSVariableBuiltin Bold
+
+"" Text
+highlight! link TSText Normal
+highlight! link TSStrong Bold
+highlight! link TSEmphasis Bold
+highlight! link TSUnderline Underlined
+highlight! link TSTitle Bold
+highlight! link TSLiteral Green
+highlight! link TSURI Underlined
+
+"" Tags
+highlight! link TSTag Orange
+highlight! link TSTagDelimiter Orange
+
+"" Punctuation
+highlight! link TSPunctBracket Normal
+highlight! link TSPunctDelimiter Normal
+highlight! link TSPunctSpecial Orange
+
+"" Special
+highlight! link TSNone Normal
+highlight! link TSError Error
+
+
 " Neovim
 if has('nvim')
   " the following code snippet fix an issue with CursorLine hi group
