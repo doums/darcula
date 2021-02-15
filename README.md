@@ -35,6 +35,10 @@ let g:lightline = { 'colorscheme': 'darculaOriginal' }
 ```
 NOTE: lightline already provides a "darcula" color scheme that I find simply bad. I strongly recommend to use mine instead (using `darculaOriginal` instead of `darcula` in the above config).
 
+**tree-sitter** support
+
+[treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+
 ### VimScript API
 
 #### darcula#palette

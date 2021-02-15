@@ -209,7 +209,7 @@ hi! link Type Keyword
 call s:Hi('Typedef', s:p.typeDef)
 call s:Hi('Todo', s:p.todo, s:p.null, 'italic')
 hi! link Special PreProc
-call s:Hi('Constant', s:p.constant)
+call s:Hi('Constant', s:p.constant, s:p.null, 'italic')
 call s:Hi('String', s:p.string)
 hi! link Character String
 call s:Hi('Number', s:p.number)
@@ -223,7 +223,7 @@ hi! link Tag Keyword
 call s:Hi('Debug', s:p.debug, s:p.null, 'italic')
 call s:Hi('Function', s:p.function)
 
-" Neovim
+" neovim
 if has('nvim')
   " the following code snippet fix an issue with CursorLine hi group
   " see https://github.com/neovim/neovim/issues/9019
@@ -280,6 +280,7 @@ call s:Hi('WarningSign', s:p.warnStripe, s:p.gutter)
 call s:Hi('InfoSign', s:p.infoStripe, s:p.gutter)
 call s:Hi('IdentifierUnderCaret', s:p.null, s:p.identifierUnderCaret)
 call s:Hi('IdentifierUnderCaretWrite', s:p.null, s:p.identifierUnderCaretWrite)
+call s:Hi('InstanceField', s:p.constant)
 
 " Vim terminal colors (for :terminal)
 if !has('nvim')
@@ -303,6 +304,57 @@ if !has('nvim')
         \ ]
 endif
 
+" Tree-sitter
+hi! link TSAnnotation Normal
+hi! link TSAttribute Normal
+hi! link TSBoolean Keyword
+hi! link TSCharacter Character
+hi! link TSComment Comment
+hi! link TSConstructor Function
+hi! link TSConditional Keyword
+hi! link TSConstant Constant
+hi! link TSConstBuiltin Keyword
+hi! link TSConstMacro cMacroName
+hi! link TSError codeError
+hi! link TSException codeError
+hi! link TSField InstanceField
+hi! link TSFloat Number
+hi! link TSFunction Function
+hi! link TSFuncBuiltin Normal
+hi! link TSFuncMacro cMacroName
+hi! link TSInclude PreProc
+hi! link TSKeyword Keyword
+hi! link TSKeywordFunction Keyword
+hi! link TSLabel Normal
+hi! link TSMethod Function
+hi! link TSNamespace cDataStructure
+hi! link TSNone Keyword
+hi! link TSNumber Number
+hi! link TSOperator Normal
+hi! link TSParameter Normal
+hi! link TSParameterReference Normal
+hi! link TSProperty TSField
+hi! link TSPunctDelimiter Normal
+hi! link TSPunctBracket Normal
+hi! link TSPunctSpecial Keyword
+hi! link TSRepeat Keyword
+hi! link TSString String
+hi! link TSStringRegex Number
+hi! link TSStringEscape Keyword
+hi! link TSTag htmlTag
+hi! link TSTagDelimiter htmlTag
+hi! link TSText Normal
+call s:Hi('TSEmphasis', s:p.fg, s:p.null, 'bold')
+call s:Hi('TSUnderline', s:p.fg, s:p.null, 'underline')
+call s:Hi('TSStrike', s:p.fg, s:p.null, 'strikethrough')
+call s:Hi('TSTitle', s:p.fg, s:p.null, 'bold,underline')
+hi! link TSLiteral Normal
+hi! link TSURI markdownLinkText
+hi! link TSType Normal
+hi! link TSTypeBuiltin Keyword
+hi! link TSVariable Normal
+hi! link TSVariableBuiltin Keyword
+
 " C/C++
 call s:Hi('cMacroName', s:p.macroName)
 hi! link cConstant cMacroName
@@ -311,7 +363,7 @@ hi! link cPreProcRegion NormalFg
 hi! link cUserLabel NormalFg
 hi! link cDataStructureKeyword Keyword
 call s:Hi('cDataStructure', s:p.cDataStructure)
-call s:Hi('cFunction', s:p.function)
+hi! link cFunction Function
 hi! link cppDestructor cFunction
 hi! link cSemicolon Keyword
 hi! link cComma Keyword
@@ -341,12 +393,12 @@ hi! link rustSigil NormalFg
 hi! link rustSelf Keyword
 call s:Hi('rustLifetime', s:p.rustLifetime, s:p.null, 'italic')
 call s:Hi('rustTypeParameter', s:p.rustLifetime)
-call s:Hi('rustEnumVariant', s:p.constant, s:p.null, 'italic')
+hi! link rustEnumVariant Constant
 hi! link rustModPath NormalFg
 hi! link rustModPathSep NormalFg
 hi! link rustAs Keyword
-call s:Hi('rustConst', s:p.constant, s:p.null, 'italic')
-hi! link rustVarField Constant
+hi! link rustConst Constant
+hi! link rustVarField InstanceField
 
 " Vim
 hi! link vimOption Constant
@@ -365,7 +417,7 @@ hi! link JsFrom Keyword
 hi! link JsOperator NormalFg
 hi! link jsArrowFunction NormalFg
 hi! link jsFuncArgCommas Delimiter
-hi! link jsObjectKey Constant
+hi! link jsObjectKey InstanceField
 hi! link jsTernaryIfOperator NormalFg
 hi! link jsObjectSeparator Keyword
 hi! link jsSpreadOperator NormalFg
@@ -373,7 +425,7 @@ hi! link jsModuleComma Keyword
 hi! link jsClassDefinition NormalFg
 hi! link jsSuper Keyword
 hi! link jsThis Keyword
-hi! link jsObjectProp Constant
+hi! link jsObjectProp InstanceField
 hi! link jsDestructuringNoise Keyword
 hi! link jsClassProperty Function
 hi! link jsBooleanTrue Keyword
@@ -388,17 +440,17 @@ hi! link typescriptBraces NormalFg
 hi! link typescriptDocComment docComment
 hi! link typescriptDocParam docComment
 hi! link typescriptParens NormalFg
-hi! link typescriptOpSymbols Constant
+hi! link typescriptOpSymbols InstanceField
 hi! link typescriptRegexpString Number
 hi! link typescriptSpecial Keyword
-hi! link typescriptLogicSymbols Constant
+hi! link typescriptLogicSymbols InstanceField
 hi! link typescriptExceptions Keyword
 call s:Hi('typescriptDocTags', s:p.docComment, s:p.null, 'bold,italic,underline')
 call s:Hi('typescriptGlobalObjects', s:p.tsObject)
 
 " JSON
 hi! link jsonBraces NormalFg
-hi! link jsonKeyword Constant
+hi! link jsonKeyword InstanceField
 hi! link jsonNoise Keyword
 hi! link jsonKeywordMatch Keyword
 hi! link jsonBoolean Keyword
@@ -421,7 +473,7 @@ hi! link xmlCdata NormalFg
 hi! link xmlCdataCdata xmlCdata
 hi! link xmlCdataStart xmlCdata
 hi! link xmlCdataEnd xmlCdata
-hi! link xmlNamespace Constant
+hi! link xmlNamespace InstanceField
 hi! link xmlAttribPunct NormalFg
 hi! link xmlEqual xmlString
 
@@ -444,7 +496,7 @@ hi! link yamlNodeTag NormalFg
 hi! link yamlNull NormalFg
 
 " Markdown
-call s:Hi('markdownH1', s:p.constant, s:p.null, 'italic')
+hi! link markdownH1 Constant
 hi! link markdownH2 markdownH1
 hi! link markdownH3 markdownH1
 hi! link markdownH4 markdownH1
@@ -519,7 +571,7 @@ hi! link shQuote String
 call s:Hi('shHereDoc', s:p.null, s:p.templateLanguage)
 call s:Hi('shRedir', s:p.fg, s:p.null, 'bold')
 hi! link shDerefSimple NormalFg
-hi! link shCommandSubBQ Constant
+hi! link shCommandSubBQ InstanceField
 hi! link shOption NormalFg
 hi! link shCmdSubRegion shStatement
 hi! link shCommandSub NormalFg
