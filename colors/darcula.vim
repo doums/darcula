@@ -66,6 +66,7 @@ let s:p={
       \ 'errorStripe': ['#9E2927', 124],
       \ 'warnStripe': ['#BE9117', 136],
       \ 'infoStripe': ['#756D56', 101],
+      \ 'hintStripe': ['#6c7176', 242],
       \ 'typeDef': ['#B9BCD1', 146],
       \ 'menu': ['#46484A', 238],
       \ 'menuFg': ['#BBBBBB', 250],
@@ -223,6 +224,24 @@ hi! link Tag Keyword
 call s:Hi('Debug', s:p.debug, s:p.null, 'italic')
 call s:Hi('Function', s:p.function)
 
+" helper groups
+call s:Hi('docComment', s:p.docComment, s:p.null, 'italic')
+call s:Hi('NormalFg', s:p.fg)
+call s:Hi('GitAddStripe', s:p.addStripe, s:p.addStripe)
+call s:Hi('GitChangeStripe', s:p.changeStripe, s:p.changeStripe)
+call s:Hi('GitDeleteStripe', s:p.deleteStripe, s:p.gutter)
+call s:Hi('CodeError', s:p.null, s:p.codeError)
+call s:Hi('CodeWarning', s:p.null, s:p.codeWarning)
+call s:Hi('CodeInfo', s:p.null, s:p.infoStripe)
+call s:Hi('CodeHint', s:p.hintFg, s:p.hintBg)
+call s:Hi('ErrorSign', s:p.errorStripe, s:p.gutter)
+call s:Hi('WarningSign', s:p.warnStripe, s:p.gutter)
+call s:Hi('InfoSign', s:p.infoStripe, s:p.gutter)
+call s:Hi('HintSign', s:p.hintStripe, s:p.gutter)
+call s:Hi('IdentifierUnderCaret', s:p.null, s:p.identifierUnderCaret)
+call s:Hi('IdentifierUnderCaretWrite', s:p.null, s:p.identifierUnderCaretWrite)
+call s:Hi('InstanceField', s:p.constant)
+
 " neovim
 if has('nvim')
   " the following code snippet fix an issue with CursorLine hi group
@@ -263,24 +282,75 @@ if has('nvim')
   let g:terminal_color_13 = s:p.ANSIBrightMagenta[0]
   let g:terminal_color_14 = s:p.ANSIBrightCyan[0]
   let g:terminal_color_15 = s:p.ANSIWhite[0]
-endif
 
-" helper groups
-call s:Hi('docComment', s:p.docComment, s:p.null, 'italic')
-call s:Hi('NormalFg', s:p.fg)
-call s:Hi('GitAddStripe', s:p.addStripe, s:p.addStripe)
-call s:Hi('GitChangeStripe', s:p.changeStripe, s:p.changeStripe)
-call s:Hi('GitDeleteStripe', s:p.deleteStripe, s:p.gutter)
-call s:Hi('CodeError', s:p.null, s:p.codeError)
-call s:Hi('CodeWarning', s:p.null, s:p.codeWarning)
-call s:Hi('CodeInfo', s:p.null, s:p.infoStripe)
-call s:Hi('CodeHint', s:p.hintFg, s:p.hintBg)
-call s:Hi('ErrorSign', s:p.errorStripe, s:p.gutter)
-call s:Hi('WarningSign', s:p.warnStripe, s:p.gutter)
-call s:Hi('InfoSign', s:p.infoStripe, s:p.gutter)
-call s:Hi('IdentifierUnderCaret', s:p.null, s:p.identifierUnderCaret)
-call s:Hi('IdentifierUnderCaretWrite', s:p.null, s:p.identifierUnderCaretWrite)
-call s:Hi('InstanceField', s:p.constant)
+  " Tree-sitter
+  hi! link TSAnnotation Normal
+  hi! link TSAttribute Normal
+  hi! link TSBoolean Keyword
+  hi! link TSCharacter Character
+  hi! link TSComment Comment
+  hi! link TSConstructor Function
+  hi! link TSConditional Keyword
+  hi! link TSConstant Constant
+  hi! link TSConstBuiltin Keyword
+  hi! link TSConstMacro cMacroName
+  hi! link TSError codeError
+  hi! link TSException codeError
+  hi! link TSField InstanceField
+  hi! link TSFloat Number
+  hi! link TSFunction Function
+  hi! link TSFuncBuiltin Normal
+  hi! link TSFuncMacro cMacroName
+  hi! link TSInclude PreProc
+  hi! link TSKeyword Keyword
+  hi! link TSKeywordFunction Keyword
+  hi! link TSLabel Normal
+  hi! link TSMethod Function
+  hi! link TSNamespace cDataStructure
+  hi! link TSNone Keyword
+  hi! link TSNumber Number
+  hi! link TSOperator Normal
+  hi! link TSParameter Normal
+  hi! link TSParameterReference Normal
+  hi! link TSProperty TSField
+  hi! link TSPunctDelimiter Normal
+  hi! link TSPunctBracket Normal
+  hi! link TSPunctSpecial Keyword
+  hi! link TSRepeat Keyword
+  hi! link TSString String
+  hi! link TSStringRegex Number
+  hi! link TSStringEscape Keyword
+  hi! link TSTag htmlTag
+  hi! link TSTagDelimiter htmlTag
+  hi! link TSText Normal
+  call s:Hi('TSEmphasis', s:p.fg, s:p.null, 'bold')
+  call s:Hi('TSUnderline', s:p.fg, s:p.null, 'underline')
+  call s:Hi('TSStrike', s:p.fg, s:p.null, 'strikethrough')
+  call s:Hi('TSTitle', s:p.fg, s:p.null, 'bold,underline')
+  hi! link TSLiteral Normal
+  hi! link TSURI markdownLinkText
+  hi! link TSType Normal
+  hi! link TSTypeBuiltin Keyword
+  hi! link TSVariable Normal
+  hi! link TSVariableBuiltin Keyword
+
+  " LSP
+  hi! link LspDiagnosticsError CodeError
+  hi! link LspDiagnosticsErrorSign ErrorSign
+  hi! link LspDiagnosticsErrorFloating CodeError
+  hi! link LspDiagnosticsWarning CodeWarning
+  hi! link LspDiagnosticsWarningSign WarningSign
+  hi! link LspDiagnosticsWarningFloating CodeWarning
+  hi! link LspDiagnosticsInformation CodeInfo 
+  hi! link LspDiagnosticsInformationSign InfoSign
+  hi! link LspDiagnosticsInformationFloating CodeInfo
+  hi! link LspDiagnosticsHint CodeHint
+  hi! link LspDiagnosticsHintSign HintSign
+  hi! link LspDiagnosticsHintFloating CodeHint
+  hi! link LspReferenceText IdentifierUnderCaret
+  hi! link LspReferenceRead IdentifierUnderCaret
+  hi! link LspReferenceWrite IdentifierUnderCaretWrite
+endif
 
 " Vim terminal colors (for :terminal)
 if !has('nvim')
@@ -303,57 +373,6 @@ if !has('nvim')
         \ s:p.ANSIWhite[0]
         \ ]
 endif
-
-" Tree-sitter
-hi! link TSAnnotation Normal
-hi! link TSAttribute Normal
-hi! link TSBoolean Keyword
-hi! link TSCharacter Character
-hi! link TSComment Comment
-hi! link TSConstructor Function
-hi! link TSConditional Keyword
-hi! link TSConstant Constant
-hi! link TSConstBuiltin Keyword
-hi! link TSConstMacro cMacroName
-hi! link TSError codeError
-hi! link TSException codeError
-hi! link TSField InstanceField
-hi! link TSFloat Number
-hi! link TSFunction Function
-hi! link TSFuncBuiltin Normal
-hi! link TSFuncMacro cMacroName
-hi! link TSInclude PreProc
-hi! link TSKeyword Keyword
-hi! link TSKeywordFunction Keyword
-hi! link TSLabel Normal
-hi! link TSMethod Function
-hi! link TSNamespace cDataStructure
-hi! link TSNone Keyword
-hi! link TSNumber Number
-hi! link TSOperator Normal
-hi! link TSParameter Normal
-hi! link TSParameterReference Normal
-hi! link TSProperty TSField
-hi! link TSPunctDelimiter Normal
-hi! link TSPunctBracket Normal
-hi! link TSPunctSpecial Keyword
-hi! link TSRepeat Keyword
-hi! link TSString String
-hi! link TSStringRegex Number
-hi! link TSStringEscape Keyword
-hi! link TSTag htmlTag
-hi! link TSTagDelimiter htmlTag
-hi! link TSText Normal
-call s:Hi('TSEmphasis', s:p.fg, s:p.null, 'bold')
-call s:Hi('TSUnderline', s:p.fg, s:p.null, 'underline')
-call s:Hi('TSStrike', s:p.fg, s:p.null, 'strikethrough')
-call s:Hi('TSTitle', s:p.fg, s:p.null, 'bold,underline')
-hi! link TSLiteral Normal
-hi! link TSURI markdownLinkText
-hi! link TSType Normal
-hi! link TSTypeBuiltin Keyword
-hi! link TSVariable Normal
-hi! link TSVariableBuiltin Keyword
 
 " C/C++
 call s:Hi('cMacroName', s:p.macroName)
