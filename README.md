@@ -39,6 +39,12 @@ NOTE: lightline already provides a "darcula" color scheme that I find simply bad
 
 [treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 
+### support
+- Truecolor
+- 256 color
+- [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+- nvim [LSP](https://neovim.io/doc/user/lsp.html)
+
 ### VimScript API
 
 #### darcula#palette
@@ -71,7 +77,7 @@ let g:gitgutter_sign_removed = '▶'
 hi! link CocErrorSign ErrorSign
 hi! link CocWarningSign WarningSign
 hi! link CocInfoSign InfoSign
-hi! link CocHintSign InfoSign
+hi! link CocHintSign HintSign
 hi! link CocErrorFloat Pmenu
 hi! link CocWarningFloat Pmenu
 hi! link CocInfoFloat Pmenu
@@ -94,10 +100,6 @@ hi! link ALEErrorSign ErrorSign
 hi! link ALEWarningSign WarningSign
 hi! link ALEInfoSign InfoSign
 ```
-
-### color support
-- Truecolor
-- 256 color
 
 ### credits
 [JetBrains](https://www.jetbrains.com/) for the original and awsome Darcula color scheme!
