@@ -57,6 +57,7 @@ let s:p={
       \ 'deleteStripe': ['#656E76', 242],
       \ 'typo': ['#659C6B', 72],
       \ 'metaData': ['#BBB529', 142],
+      \ 'builtin': ['#8787C5', 142],
       \ 'macroName': ['#908B25', 100],
       \ 'cDataStructure': ['#B5B6E3', 146],
       \ 'cStructField': ['#9373A5', 103],
@@ -89,22 +90,22 @@ let s:p={
       \ 'hintBg': ['#3B3B3B', 237],
       \ 'hintFg': ['#787878', 243],
       \ 'wrapGuide': ['#2F2F2F', 236],
-      \ 'ANSIBlack': ['#FFFFFF', 231],
-      \ 'ANSIRed': ['#FF6B68', 210],
-      \ 'ANSIGreen': ['#A8C023', 142],
-      \ 'ANSIYellow': ['#D6BF55', 179],
-      \ 'ANSIBlue': ['#5394EC', 68],
-      \ 'ANSIMagenta': ['#AE8ABE', 139],
-      \ 'ANSICyan': ['#299999', 37],
-      \ 'ANSIGray': ['#999999', 247],
-      \ 'ANSIDarkGray': ['#555555', 240],
-      \ 'ANSIBrightRed': ['#FF8785', 210],
-      \ 'ANSIBrightGreen': ['#A8C023', 142],
+      \ 'ANSIBlack': ['#000000', 231],
+      \ 'ANSIRed': ['#B34B49', 210],
+      \ 'ANSIGreen': ['#548C26', 142],
+      \ 'ANSIYellow': ['#8A7924', 179],
+      \ 'ANSIBlue': ['#3A91CF', 68],
+      \ 'ANSIMagenta': ['#E55CE5', 139],
+      \ 'ANSICyan': ['#009191', 37],
+      \ 'ANSIGray': ['#7A7A7A', 247],
+      \ 'ANSIDarkGray': ['#4F4F4F', 240],
+      \ 'ANSIBrightRed': ['#FF5452', 210],
+      \ 'ANSIBrightGreen': ['#61AB11', 142],
       \ 'ANSIBrightYellow': ['#FFFF00', 226],
-      \ 'ANSIBrightBlue': ['#7EAEF1', 110],
-      \ 'ANSIBrightMagenta': ['#FF99FF', 219],
-      \ 'ANSIBrightCyan': ['#6CDADA', 116],
-      \ 'ANSIWhite': ['#1F1F1F', 234],
+      \ 'ANSIBrightBlue': ['#1EA0FC', 110],
+      \ 'ANSIBrightMagenta': ['#E55CE5', 219],
+      \ 'ANSIBrightCyan': ['#00FFFF', 116],
+      \ 'ANSIWhite': ['#FFFFFF', 234],
       \ 'UIBlue': ['#3592C4', 67],
       \ 'UIGreen': ['#499C54', 71],
       \ 'UIRed': ['#C75450', 131],
@@ -603,6 +604,11 @@ hi! link shSpecial String
 hi! link shCommandSub NormalFg
 hi! link shDerefSpecial NormalFg
 hi! link shOperator NormalFg
+
+" python
+call s:Hi('pythonBuiltin', s:p.builtin)
+hi! link pythonExceptions pythonBuiltin
+hi! link pythonInclude Keyword
 
 " help
 hi! link helpHyperTextJump Number
