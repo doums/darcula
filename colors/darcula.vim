@@ -295,7 +295,7 @@ if has('nvim')
   hi! link TSConstBuiltin Keyword
   hi! link TSConstMacro cMacroName
   hi! link TSError codeError
-  hi! link TSException codeError
+  hi! link TSException Keyword
   hi! link TSField InstanceField
   hi! link TSFloat Number
   hi! link TSFunction Function
@@ -323,12 +323,16 @@ if has('nvim')
   hi! link TSTag htmlTag
   hi! link TSTagDelimiter htmlTag
   hi! link TSText Normal
-  call s:Hi('TSEmphasis', s:p.fg, s:p.null, 'bold')
+  call s:Hi('TSStrong', s:p.fg, s:p.null, 'bold')
+  call s:Hi('TSEmphasis', s:p.fg, s:p.null, 'italic')
   call s:Hi('TSUnderline', s:p.fg, s:p.null, 'underline')
   call s:Hi('TSStrike', s:p.fg, s:p.null, 'strikethrough')
   call s:Hi('TSTitle', s:p.fg, s:p.null, 'bold,underline')
   hi! link TSLiteral Normal
   hi! link TSURI markdownLinkText
+  hi! link TSNote CodeInfo
+  hi! link TSWarning CodeWarning
+  hi! link TSDanger CodeError
   hi! link TSType Normal
   hi! link TSTypeBuiltin Keyword
   hi! link TSVariable Normal
