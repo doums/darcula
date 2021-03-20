@@ -285,7 +285,7 @@ if has('nvim')
 
   " Tree-sitter
   hi! link TSAnnotation PreProc
-  hi! link TSAttribute Normal
+  hi! link TSAttribute PreProc
   hi! link TSBoolean Keyword
   hi! link TSCharacter Character
   hi! link TSComment Comment
