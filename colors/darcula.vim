@@ -284,8 +284,8 @@ if has('nvim')
   let g:terminal_color_15 = s:p.ANSIWhite[0]
 
   " Tree-sitter
-  hi! link TSAnnotation Normal
-  hi! link TSAttribute Normal
+  hi! link TSAnnotation PreProc
+  hi! link TSAttribute PreProc
   hi! link TSBoolean Keyword
   hi! link TSCharacter Character
   hi! link TSComment Comment
@@ -301,13 +301,13 @@ if has('nvim')
   hi! link TSFunction Function
   hi! link TSFuncBuiltin Normal
   hi! link TSFuncMacro cMacroName
-  hi! link TSInclude PreProc
+  hi! link TSInclude Keyword
   hi! link TSKeyword Keyword
   hi! link TSKeywordFunction Keyword
   hi! link TSLabel Normal
   hi! link TSMethod Function
   hi! link TSNamespace cDataStructure
-  hi! link TSNone Keyword
+  hi! link TSNone Normal
   hi! link TSNumber Number
   hi! link TSOperator Normal
   hi! link TSParameter Normal
