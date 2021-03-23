@@ -8,15 +8,18 @@
   "#elif"
   "#endif"
   (preproc_directive)
-] @preproc
+] @annotation
 
 (preproc_def
-  name: (identifier) @macro_name)
+  name: (identifier) @constant.macro)
 (preproc_ifdef
-  name: (identifier) @macro_name)
+  name: (identifier) @constant.macro)
 (preproc_function_def
-  name: (identifier) @macro_name)
+  name: (identifier) @constant.macro)
 (preproc_if
-  condition: (identifier) @macro_name)
-(preproc_elif (identifier) @macro_name)
-((preproc_arg) @macro_name)
+  condition: (identifier) @constant.macro)
+(preproc_elif (identifier) @constant.macro)
+((preproc_arg) @constant.macro)
+((primitive_type) @keyword)
+(call_expression
+  function: (identifier) @text)
