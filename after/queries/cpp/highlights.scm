@@ -9,7 +9,10 @@
   "#endif"
   (preproc_directive)
 ] @annotation
-
+[
+  ","
+  ";"
+] @keyword
 (preproc_def
   name: (identifier) @constant.macro)
 (preproc_ifdef
