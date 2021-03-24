@@ -19,7 +19,7 @@
 (preproc_if
   condition: (identifier) @constant.macro)
 (preproc_elif (identifier) @constant.macro)
-((preproc_arg) @constant.macro)
+(preproc_call argument: (preproc_arg) @constant.macro)
 ((primitive_type) @keyword)
 (call_expression
   function: (identifier) @text)
