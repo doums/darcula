@@ -350,6 +350,10 @@ if has('nvim')
   hi! link LspReferenceText IdentifierUnderCaret
   hi! link LspReferenceRead IdentifierUnderCaret
   hi! link LspReferenceWrite IdentifierUnderCaretWrite
+  hi! link LspDiagnosticsUnderlineError CodeError
+  hi! link LspDiagnosticsUnderlineWarning CodeWarning
+  hi! link LspDiagnosticsUnderlineInformation CodeInfo
+  hi! link LspDiagnosticsUnderlineHint CodeHint
 endif
 
 " Vim terminal colors (for :terminal)
