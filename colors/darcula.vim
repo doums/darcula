@@ -339,14 +339,14 @@ if has('nvim')
   hi! link TSVariableBuiltin Keyword
 
   " LSP
-  hi! LspDiagnosticsDefaultError CodeError
-  hi! LspDiagnosticsDefaultWarning CodeWarning
-  hi! LspDiagnosticsDefaultInformation CodeInfo
-  hi! LspDiagnosticsDefaultHint CodeHint
-  hi! LspDiagnosticsSignError ErrorSign
-  hi! LspDiagnosticsSignWarning WarningSign
-  hi! LspDiagnosticsSignInformation InfoSign
-  hi! LspDiagnosticsSignHint HintSign
+  hi! link LspDiagnosticsDefaultError CodeError
+  hi! link LspDiagnosticsDefaultWarning CodeWarning
+  hi! link LspDiagnosticsDefaultInformation CodeInfo
+  hi! link LspDiagnosticsDefaultHint CodeHint
+  hi! link LspDiagnosticsSignError ErrorSign
+  hi! link LspDiagnosticsSignWarning WarningSign
+  hi! link LspDiagnosticsSignInformation InfoSign
+  hi! link LspDiagnosticsSignHint HintSign
   hi! link LspReferenceText IdentifierUnderCaret
   hi! link LspReferenceRead IdentifierUnderCaret
   hi! link LspReferenceWrite IdentifierUnderCaretWrite
