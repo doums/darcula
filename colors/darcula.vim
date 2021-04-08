@@ -358,6 +358,10 @@ if has('nvim')
   hi! link LspDiagnosticsUnderlineWarning CodeWarning
   hi! link LspDiagnosticsUnderlineInformation CodeInfo
   hi! link LspDiagnosticsUnderlineHint CodeHint
+  hi! link LspDiagnosticsFloatingError NormalFloat
+  hi! link LspDiagnosticsFloatingWarning NormalFloat
+  hi! link LspDiagnosticsFloatingInformation NormalFloat
+  hi! link LspDiagnosticsFloatingHint NormalFloat
 endif
 
 " Vim terminal colors (for :terminal)
