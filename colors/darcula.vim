@@ -89,6 +89,8 @@ let s:p={
       \ 'hintBg': ['#3B3B3B', 237],
       \ 'hintFg': ['#787878', 243],
       \ 'wrapGuide': ['#2F2F2F', 236],
+      \ 'UIBorder': ['#616161', 241],
+      \ 'UISelection': ['#0D293E', 17],
       \ 'ANSIBlack': ['#FFFFFF', 231],
       \ 'ANSIRed': ['#FF6B68', 210],
       \ 'ANSIGreen': ['#A8C023', 142],
@@ -241,6 +243,8 @@ call s:Hi('HintSign', s:p.hintStripe, s:p.gutter)
 call s:Hi('IdentifierUnderCaret', s:p.null, s:p.identifierUnderCaret)
 call s:Hi('IdentifierUnderCaretWrite', s:p.null, s:p.identifierUnderCaretWrite)
 call s:Hi('InstanceField', s:p.constant)
+call s:Hi('UIBorder', s:p.UIBorder, s:p.statusLine)
+call s:Hi('UISelection', s:p.null, s:p.UISelection)
 
 " neovim
 if has('nvim')
