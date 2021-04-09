@@ -619,3 +619,26 @@ hi! link shOperator NormalFg
 
 " help
 hi! link helpHyperTextJump Number
+
+" PHP
+if has("autocmd")
+	autocmd BufEnter *.php call s:Hi('Normal', s:p.fg, s:p.templateLanguage)
+endif
+hi! link phpFunctions Normal
+hi! link phpFunction function
+hi! link phpMethod function
+hi! link phpIdentifier constant
+hi! link phpMethodsVar constant
+hi! link phpInclude keyword
+hi! link phpBoolean keyword
+hi! link phpSpecialChar keyword
+hi! link phpParent Normal
+hi! link phpOperator Normal
+hi! link phpMemberSelector Normal
+hi! link phpStaticClasses Normal
+hi! link phpDocComment docComment
+hi! link phpDocParam docComment
+hi! link phpDocIdentifier docComment
+hi! link phpCommentStar docComment
+hi! link phpCommentTitle docComment
+call s:Hi('phpDocTags', s:p.docComment, s:p.null, 'bold,italic,underline')
