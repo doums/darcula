@@ -243,6 +243,7 @@ call s:Hi('HintSign', s:p.hintStripe, s:p.gutter)
 call s:Hi('IdentifierUnderCaret', s:p.null, s:p.identifierUnderCaret)
 call s:Hi('IdentifierUnderCaretWrite', s:p.null, s:p.identifierUnderCaretWrite)
 call s:Hi('InstanceField', s:p.constant)
+call s:Hi('UIDialog', s:p.fg, s:p.statusLine)
 call s:Hi('UIBorder', s:p.UIBorder, s:p.statusLine)
 call s:Hi('UISelection', s:p.null, s:p.UISelection)
 
